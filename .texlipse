@@ -1,0 +1,13 @@
+#TeXlipse project settings
+#Tue Sep 25 13:47:20 CEST 2007
+builderNum=2
+outputDir=
+makeIndSty=
+bibrefDir=
+outputFormat=pdf
+tempDir=tmp
+mainTexFile=RegT1E.tex
+outputFile=RegT1E.pdf
+langSpell=en
+markDer=true
+srcDir=

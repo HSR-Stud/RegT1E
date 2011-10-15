@@ -1,0 +1,391 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% Dokumentinformationen %
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\titleinfo}{Regelungstechnik 1 - Formelsammlung}
+\newcommand{\authorinfo}{Braun \& Co, J.Rast}
+\newcommand{\versioninfo}{$Revision: 1 $ - powered by \LaTeX}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Standard projektübergreifender Header für
+% - Makros 
+% - Farben
+% - Mathematische Operatoren
+%
+% DORT NUR ERGÄNZEN, NICHTS LÖSCHEN
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\include{header}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Neue Befehle und Definitionen                
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+\setlength{\parindent}{0pt}
+ \section{Technischer Regelkreis}
+ \subsection{Definitionen \formelbuch{20}}
+	\begin{tabular}{ p{1.5cm} p{15.5cm}}
+        System 		&Eine Anordnung von Gebilden, die miteinander in Beziehung stehen
+        			und die sich gegenüber der Umgebung abgrenzen lasen\\
+        Prozess:	&Die Gesammtheit der zusammenwirkenden Vorgänge in einem System,
+        			durch die Materie, Energie, Informationen umgeformt, transportiert und gespeichert wird\\
+
+        SISO:		&Single Input- Single Output\\
+        MiMo:		&Multi Input- Multi Output\\
+        Steuerung:	&ohne Rückkopplung\\
+        			&	-kann bei {\bf stabiler} Strecke {\bf nicht instabil} werden\\
+        Regelung:	&mit Rückkopplung (wirkt als Gegenkopplung)\\
+        			&	-immer ein Vergleichsglied zwischen Führungsgrösse (Sollwert) und
+        			Regelgrösse(Istwert)\\
+        			&	-min. ein Vergleichsglied\\
+        			&	-kann auf veränderte Störgrössen reagieren\\
+        			&	-kann bei {\bf stabiler} Strecke {\bf instabil} werden\\ 
+
+    \end{tabular}
+
+	\begin{tabular}{|p{2.7cm}|p{5.4cm}|l|}
+    	\hline
+    	{\bf Begriff deutsch}		&{\bf Begriff englisch}	&{\bf Ergänzende}\\
+		\hline
+		Regelstrecke
+    	Reglekreis			&plant controlled system	&Der aufgabengemäss zu beeinflussende
+    	Teil des Systems\\
+    	\hline
+    	Regler				&controller			&Bestehent aus Vergleichsglied und Regelglied\\
+    	\hline
+    	Regeleinrichtung	&controlling means&\\
+    	\hline
+    	Reglesignalkreis	&control circuit&\\
+    	\hline
+    	Vergleichsglied		&comparing element	&Bildet den Fehler (Differenz)
+    											e=r-y\\
+    	\hline
+    	Regelglied			&controller;
+    						controlling element	&Berechnet aus dem Fehler die Stellgrösse u\\
+    	\hline
+    	Stelleinrichtung
+    	Verstärker			&actuator;
+					    	power amplifier;
+    						servo amplifier		&Funktionseinheit, die den Energie- oder Massenstrom
+    											lenkt\\
+    	\hline
+    	Messeinrichtung
+    	Messumformer		&measuring unit;
+    						transmitter&\\
+    	\hline
+    	Regelgrösse y		&controlled variable;
+    						desiered value&\\
+    	\hline
+    	Führungsgrösse r	&reference variable;
+    						set value&\\
+    	\hline
+    	Störgrösse z Last	&disturbance variable;
+    						load&\\
+    	\hline
+    	Stellgrösse u		&manipulatetd (correcting)
+    						variable&\\
+    	\hline
+    	Regeldifferenz e
+    	Fehler				&deviation;
+    						error variable		&e =r-y\\
+    	\hline
+    	Rückkopplung		&feedback			&Rückführung\\
+    	\hline
+
+	\end{tabular}\\
+\includegraphics[height=3.6cm]{./bilder/Grundregelkreis_klein.jpg}
+
+
+	\subsection{Klassifizierung technischer Systeme}	
+		\begin{tabular}{|l | l | l|}
+        	\hline
+        	einfach					&	schwierig			&	\textcolor{red}{\underline{für Regler}}\\
+        	\hline
+        	\hline
+        	statisch				&	\textcolor{red}{\underline{dynamisch}}	&	\\
+        	\hline
+        	\textcolor{red}{\underline{linear}}			&	nichtlinear			&	Ausnahmen: 2-, 3-Pt.Regler
+        	Simulation\\ 
+        	\hline
+        	\textcolor{red}{\underline{zeitinvariant}}	&	zeitvariant&\\
+        	\hline
+        	\textcolor{red}{\underline{Zeitkontinuierlich}}&	zeitdiskret	&\\
+        	$\dot{y}=\frac{ku-y}{T}$&	$y_{k+1}=a y_k + b u_k$	&\\
+        	\hline
+        	\textcolor{red}{\underline{wertkontinuierlich}}&	wertdiskret&\\
+        	\hline
+        	\textcolor{red}{\underline{kausal}}			&	akausal	&\\
+        	\hline
+        	\textcolor{red}{\underline{konzentrierte}}	&	verteilte			&	zB. Stromleitung: \\
+        	\textcolor{red}{\underline{Parameter}}		&	Parameter			&	ein R und ein C/ sehr viele
+        	RC-Glieder in Serie\\
+        	\hline
+        	\textcolor{red}{\underline{deterministisch}}	&	stochastisch		&	vorhersehbar/zufällig\\
+        	\hline
+        \end{tabular}	
+\newpage
+
+\section{Regelungen}
+\subsection{Glieder \formelbuch{70}}
+
+	\begin{tabular}{|l|l|l|l|l|l|}
+    	\hline
+    	\textbf{Benennung}	&\textbf{Funktion}	&\textbf{UTF}	& \textbf{Sprungantw.}	
+    		&\textbf{Verlauf Sprungantw.}	&\textbf{Symbol}\\
+    	\hline
+    	\hline
+    	\textbf{P-Glied} \formelbuch{35}		
+    	&y(t)=K u(t)		&K			&K
+    	&\begin{minipage}{2.4cm}
+         \includegraphics[width=2.4cm]{./bilder/verlaufP.jpg}
+         \end{minipage}
+    	&\begin{minipage}{2.4cm}
+         \includegraphics[width=2.4cm]{./bilder/p-Glied.jpg}
+         \end{minipage}\\
+    	\hline
+    	
+    	\begin{minipage}{4cm}
+		\vspace{0.2cm}   
+    	\textbf{I-Glied} \formelbuch{28}  \\
+    	\includegraphics[width=3.5cm]{./bilder/OP-Integrator.png}	   
+      \end{minipage}	&
+    	\parbox{3cm}{$\dot{y}= K u(t)$\\
+    				$y=K\int \limits_0^t u(t) dt$\\ \\
+    				$K = - \frac{1}{R \cdot C}$}
+    				&$\dfrac{K}{s}$
+    	&Kt
+    	&\begin{minipage}{2.4cm}
+         \includegraphics[width=2.4cm]{./bilder/verlaufI.jpg}
+         \end{minipage}
+    	&\begin{minipage}{2.4cm}
+         \includegraphics[width=2.4cm]{./bilder/I-Glied.jpg}
+         \end{minipage}\\
+    	\hline
+    	
+    	\textbf{Totzeit-Glied} \formelbuch{41}	
+    	&$y(t)=u(t-T_t)$	&$e^{-T_t s}$	&$K \cdot u(t-T_t)$
+    	&\begin{minipage}{2.4cm}
+         \includegraphics[width=2.4cm]{./bilder/verlaufTt.jpg}\\
+         \end{minipage}
+    	&\begin{minipage}{2.4cm}
+         \includegraphics[width=2.4cm]{./bilder/Tt-Glied.jpg}
+         \end{minipage}\\
+		\hline
+    	 \begin{minipage}{4cm}
+			\vspace{0.2cm}
+			\textbf{PT$_1$-Glied} \formelbuch{37}\\
+    	   	\includegraphics[width=4cm]{./bilder/PT1.png}        
+         \end{minipage}
+		 &\parbox{3cm}{$T\dot{y}+y=K u(t)$\\\\
+		 $T = \dfrac{1}{K_i \cdot K_p}$\\
+		 $K = \dfrac{1}{K_p}$}	 
+		 &$\dfrac{K}{1+Ts}$
+    	 &$K(1-e^{-\frac{t}{T}})$
+    	 &\begin{minipage}{2.4cm}
+         \includegraphics[width=2.3cm]{./bilder/verlaufPT1.jpg}
+         \end{minipage}
+    	&\begin{minipage}{2.4cm}
+         \includegraphics[width=2.3cm]{./bilder/Pt1-Glied.jpg}
+         \end{minipage}\\
+    	\hline
+    \end{tabular}
+
+	\subsection{Stetigähnliche Regler}
+		\subsubsection{Rückkopplung des Reglers \formelbuch{57}}
+		\begin{minipage}{9cm}
+		\includegraphics[width=8.5cm]{./bilder/ZweipunktreglerMitRueckfuehrung.jpg}
+        \end{minipage}
+		\begin{minipage}{7.5cm}
+        \includegraphics[width=7cm]{./bilder/ZweipunktreglerMitRueckfuehrung_dia.jpg}
+        \end{minipage}\\
+		Die Rückkopplung mit einem $PT_1$-Glied über dem Zweipunkteregler bewirkt
+		einen bedeutend kleineren Rippel. Leider ist der Mittelwert noch unterhalb des
+		Sollwertes. Dies kann mit Hilfe eines $PT_1$-Gliedes am Schluss vor der
+		Hauptrückkopplung behoben werden.
+	
+	\subsubsection{Dreipunktregler \formelbuch{59}}
+		\begin{minipage}{9cm}
+		\includegraphics[width=9cm]{./bilder/Dreipunktregler.jpg}
+        \end{minipage}
+		\begin{minipage}{7.5cm}
+        \includegraphics[width=7.5cm]{./bilder/Dreipunktregler_dia.jpg}
+        \end{minipage}\\
+		Damit d = 0 wird muss c=$T_u K_I$ sein.
+\newpage
+		
+		
+	\subsubsection{Zweipunktregler \formelbuch{46,71}}
+		\begin{minipage}{3cm}
+ 		\includegraphics[height=3cm]{./bilder/Zweipunktregler.jpg}
+        \end{minipage}
+		\begin{minipage}{15cm}
+        Ein Zweipunktregler ist ein unstetig arbeitender Regler mit zwei
+        Ausgangszuständen. Je nachdem, ob der Istwert über oder unter dem
+        Sollwert liegt, wird der erste oder der zweite Ausgangszustand
+        eingenommen.   
+        \end{minipage}
+
+		\textbf{Beispiele von Zweipunktereglerschaltungen: \formelbuch{52,53}}\\
+		\begin{minipage}{9cm}
+			\vspace{.5cm}        
+	 		\includegraphics[width=9cm]{./bilder/Zweipunktregler-b+b2.jpg}\\
+			Die Anstiegszeit beträgt nach dem Einschwingvorgang:\\
+			$t_{ein}=\frac{2a}{(b K_p - q_a)K_i K_m}$ \\ \\
+			Die Abfallszeit beträgt nach dem Einschwingvorgang:\\
+			$t_{aus}=\frac{2a}{(b K_p + q_a)K_i K_m}$
+        \end{minipage}
+		\begin{minipage}{9cm}
+			\vspace{.5cm}        
+			\includegraphics[width=9cm]{./bilder/Zweipunktregler-b+b_dia.jpg}
+        \end{minipage}\\
+	\vspace{.5cm}
+	\hrule
+	\vspace{.5cm}
+		\begin{minipage}{9cm}
+ 		\includegraphics[width=9cm]{./bilder/ZweipunktreglerTotglied2.jpg}\\
+			Die Anstiegszeit beträgt nach dem Einschwingvorgang:
+			$t_{ein}$=$T_g\ln(\frac{e^{-\frac{T_u}{T_g}}(A-a)-b K_s}{A+a-b K_s})+T_u$\\ \\
+			Die Abfallszeit beträgt nach dem Einschwingvorgang:
+			$t_{aus}$=$T_g\ln(\frac{A+a-b
+			K_s+\frac{b K_s}{e^{-\frac{T_u}{T_g}}}}{A-a})$\\
+        \end{minipage}
+		\begin{minipage}{9cm}
+		\includegraphics[width=9cm]{./bilder/ZweipunktreglerTotglied_dia.jpg}			
+        \end{minipage}
+
+	\subsection{Stationäre Signale}
+% 	Im stationären Fall werden die Fehlersignale jeweils als Null angenommen.
+% 	Beachtet werden muss, dass die Integratoren am Ausgang einen beliebigen Wert
+% 	annehmen und Totzeitglieder kurzgeschlossen werden können.	
+	Für den stationären Fall gelten folgende Bedingungen:
+	\begin{itemize}
+    	\item \textbf{Fehlersignale} werden jeweils als \textbf{Null} angenommen.
+    	\item \textbf{Integratoren} haben am \textbf{Eingang Null}.
+    	\item \textbf{Integratoren} haben am \textbf{Ausgang} einen \textbf{beliebigen Wert}.
+    	\item \textbf{Totzeitglieder} werden kurzgeschlossen.
+    	\item \textbf{PT$_1$-Glieder} wirken als \textbf{P-Glieder} mit $K_P = K_{PT_1}$ behandelt.
+  	\end{itemize}
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%		
+\section{Linearisierung}
+	\subsection{LTI-Systeme}
+	  	\renewcommand{\arraystretch}{1.5}
+		\begin{tabular}{|l|l|}
+	    	\hline
+	    	\textbf{Linearität} \formelbuch{76} & \textbf{Zeitinvarianz} \formelbuch{82}\\
+	    	\hline
+	    	$\Phi(x1+x2)=\Phi(x1)+\Phi(x2)$ & $\Phi(x(t-t_0)=\Phi(x)\cdot x(t-t_0)$ \\
+	    	$\Phi(c\cdot x)=c\cdot \Phi(x)$ & \\
+			\hline    
+	    \end{tabular}
+	  	\renewcommand{\arraystretch}{1}
+	  	
+	\subsection{Erwünschte Nichtlinearität \formelbuch{84}}
+		In einem Prozess sind Linearitäten meist erwünscht, da sie meist mit
+		Gleichungen zu lösen sind.
+		Viele Efekte, wie zum Beispiel die Modulation oder so sind aber gerade erst
+		durch Nichtlinearitäten möglich. Daher unterscheidet man:\\
+	\includegraphics[width=8cm]{./bilder/Liste_Nichtlinearitaeten.jpg}
+
+
+	\subsection{Erfassen von nicht liniearen Kurven}
+	\subsubsection{Messung einer statischen Kennlinie \formelbuch{86}}
+	\begin{minipage}{10cm}
+		\includegraphics[width=7cm]{./bilder/NichtlinearMitPT1.jpg}   
+    \end{minipage}
+	\begin{minipage}{7cm}
+    	\includegraphics[width=5cm]{./bilder/NichtlinearMitPT1_dia.jpg}
+    \end{minipage}\\
+		Da das Signal x meist nicht zugänglich ist, muss man den ganzen Prozess
+		ausmessen.\\
+		Mit einem Dreieck kann man die Kennlinie auslesen. Sie wird jedoch von einer
+		``unechten" Hysterese verzert, die eine Hysteresebreite von 2$\alpha$ T, wobei
+		$\alpha$ die Rampensteilheit ist und T die Zeitkonstante des PT1-Gliedes.
+
+	\subsubsection{Mathematische Erfassung einer Messkurve \formelbuch{89}}
+
+	\begin{floatingfigure}[r]{12cm}
+    \includegraphics[width=10cm,height=3cm]{./bilder/KennlinieMitStuetzwerten.jpg}
+	\end{floatingfigure}
+   	
+     	1. Wahl einer geegneten Funktion:\\
+     	Gesucht ist ein Graph, der eine ähnliche Form
+		hat wie die Messkurve. Günstig sind Polynome, da sie mathematisch einfach zum
+		beschreiben sind, aber auch Sinus- oder Arctan- Funktionen	\\ 
+        \\
+     	\begin{enumerate}\setcounter{enumi}{1} 
+        \item Bestimmung der Parameter:
+          \begin{enumerate}
+           \item Methode der ausgewählten Punkte:\\
+          		\begin{enumerate}
+                    \item Gleich viele Messpunkte wie frei zu wählende Parameter der
+           			Approximationsfunktionen.
+           			\item Einsetzen der Koordinaten der Messpunkte in die Gleichungen.
+           		\end{enumerate}
+           	\item Methode der kleinsten Fehlerquadrate:
+           		\begin{enumerate}
+                     \item Mindestens gleich viele Messpunkte wie Parameter der
+           		Appxomationsfunktion, können jedoch mehr gewählt werden.
+           		\item Fehler bilden zwischen Messpunkt und Funktionspunkt. zB.\\
+           		P1:  $e_1=2-y=2-(a(1.5)+b(1.5)^2)$\\
+           		P2:  $e_2=5.5-y=5.5-(a(7)+b(7)^2)$\\
+           		P3:  $e_3=4.5-y=4.5-(a(4)+b(4)^2)$\\
+           		\item Nach Guass ist die beste Näherung, wenn die Summe der
+           		Fehlerquadrate minimal wird. \\
+           		$\Longrightarrow$ S =$ e_1^2+e_2^2+e_3^2=min$\\
+           		$\frac{\delta S}{\delta a}=
+           		2 e_1 \frac{\delta e_1}{\delta a}+
+           		2 e_2 \frac{\delta e_2}{\delta a}+
+           		2 e_3 \frac{\delta e_3}{\delta a}=0$\\
+           		$\frac{\delta S}{\delta b}=
+           		2 e_1 \frac{\delta e_1}{\delta b}+
+           		2 e_2 \frac{\delta e_2}{\delta b}+
+           		2 e_3 \frac{\delta e_3}{\delta b}=0$\\
+           		\item Nachteil dieser Methode ist, dass es meist einen grossen
+           		Rechenaufwand ergibt. Sie ist jedoch genauer als die erste Methode.
+           		Ausserdem geht die Approixmationsfunktion nicht durch die Messwerte.
+           		\end{enumerate}
+		\end{enumerate}
+	\end{enumerate}
+    
+	 
+	
+	\subsection{Linearisierung}
+		\subsubsection{Modelleinschränkung \formelbuch{92}}
+			Praktisch alle physikalische Systeme unterliegen gewissen Aussteuergrenzen.
+			In diesen können sie linear sein. Es muss darauf achten, dass  das System
+			diese nicht überschreitet.
+			
+		\subsubsection{Arbeitspunkt \formelbuch{93}}
+			Wenn eine Kennlinie für einen bestimmten Aussteuerung einen nicht zu grosse
+			Krümmung hat, kann man in der Näherung diese durch die Tangente ersetzen, und
+			somit wieder linear rechnen. \\ \\
+			\textbf{Trigonometrische Funktionen bei Arbeitspunkt $\alpha = 0$}: $\qquad \sin \alpha \approx
+			\alpha \qquad \tan \alpha \approx \alpha \qquad \cos \alpha \approx 1$
+		\subsubsection{Durch inverse Kennlinie \formelbuch{94}}
+		\begin{minipage}{11cm}
+			\includegraphics[width=10cm]{./bilder/Kennlinienkompensation.jpg}
+        \end{minipage}
+		\begin{minipage}{6cm}
+        	\includegraphics[width=6cm]{./bilder/Kennlinienkompensation_dia.jpg}
+        \end{minipage}\\
+			Durch das Vorschalten der Inversen Kennlinie kann man die Nichtlinearitäten
+			beheben. Das System als ganzes reagiert nun linear, das Innere des System
+			jedoch immer noch nicht, wie man an den Kennlinien gut erkennen kann.
+			
+		\subsubsection{Durch Gegenkopplung \formelbuch{96}}
+				\begin{minipage}{11cm}
+			\includegraphics[width=10cm]{./bilder/Gegenkopplung.jpg}
+        \end{minipage}
+		\begin{minipage}{9cm}
+        	\includegraphics[width=6cm]{./bilder/Gegenkopplung_dia.jpg}
+        \end{minipage}\\
+			Da ein Prozess variierende Koefizienten besizten kann, kann die Kompensation
+			nicht immer mit der inversen Kennlinie geschehen. Deshalb ist es oft
+			günstiger die Nichtliniearitäten mit einer Gegenkopplung zu kompensieren.
+			Diese ist umso wirksamer je grösser die Verstärkung $K_p$ ist.
+			Es können jedoch Stabilitätsprobleme auftreten.			
+
+\end{document}
