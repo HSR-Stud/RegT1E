@@ -1,0 +1,137 @@
+\section{Regelungen}
+\subsection{Glieder \formelbuch{70}}
+
+	\begin{tabular}{|l|l|l|l|l|l|}
+    	\hline
+    	\textbf{Benennung}	&\textbf{Funktion}	&\textbf{UTF}	& \textbf{Sprungantw.}	
+    		&\textbf{Verlauf Sprungantw.}	&\textbf{Symbol}\\
+    	\hline
+    	\hline
+    	\textbf{P-Glied} \formelbuch{35}		
+    	&y(t)=K u(t)		&K			&K
+    	&\begin{minipage}{2.4cm}
+         \includegraphics[width=2.4cm]{./bilder/verlaufP.jpg}
+         \end{minipage}
+    	&\begin{minipage}{2.4cm}
+         \includegraphics[width=2.4cm]{./bilder/p-Glied.jpg}
+         \end{minipage}\\
+    	\hline
+    	
+    	\begin{minipage}{4cm}
+		\vspace{0.2cm}   
+    	\textbf{I-Glied} \formelbuch{28}  \\
+    	\includegraphics[width=3.5cm]{./bilder/OP-Integrator.png}	   
+      \end{minipage}	&
+    	\parbox{3cm}{$\dot{y}= K u(t)$\\
+    				$y=K\int \limits_0^t u(t) dt$\\ \\
+    				$K = - \frac{1}{R \cdot C}$}
+    				&$\dfrac{K}{s}$
+    	&Kt
+    	&\begin{minipage}{2.4cm}
+         \includegraphics[width=2.4cm]{./bilder/verlaufI.jpg}
+         \end{minipage}
+    	&\begin{minipage}{2.4cm}
+         \includegraphics[width=2.4cm]{./bilder/I-Glied.jpg}
+         \end{minipage}\\
+    	\hline
+    	
+    	\textbf{Totzeit-Glied} \formelbuch{41}	
+    	&$y(t)=u(t-T_t)$	&$e^{-T_t s}$	&$K \cdot u(t-T_t)$
+    	&\begin{minipage}{2.4cm}
+         \includegraphics[width=2.4cm]{./bilder/verlaufTt.jpg}\\
+         \end{minipage}
+    	&\begin{minipage}{2.4cm}
+         \includegraphics[width=2.4cm]{./bilder/Tt-Glied.jpg}
+         \end{minipage}\\
+		\hline
+    	 \begin{minipage}{4cm}
+			\vspace{0.2cm}
+			\textbf{PT$_1$-Glied} \formelbuch{37}\\
+    	   	\includegraphics[width=4cm]{./bilder/PT1.png}        
+         \end{minipage}
+		 &\parbox{3cm}{$T\dot{y}+y=K u(t)$\\\\
+		 $T = \dfrac{1}{K_i \cdot K_p}$\\
+		 $K = \dfrac{1}{K_p}$}	 
+		 &$\dfrac{K}{1+Ts}$
+    	 &$K(1-e^{-\frac{t}{T}})$
+    	 &\begin{minipage}{2.4cm}
+         \includegraphics[width=2.3cm]{./bilder/verlaufPT1.jpg}
+         \end{minipage}
+    	&\begin{minipage}{2.4cm}
+         \includegraphics[width=2.3cm]{./bilder/Pt1-Glied.jpg}
+         \end{minipage}\\
+    	\hline
+    \end{tabular}
+
+	\subsection{Stetigähnliche Regler}
+		\subsubsection{Rückkopplung des Reglers \formelbuch{57}}
+		\begin{minipage}{9cm}
+		\includegraphics[width=8.5cm]{./bilder/ZweipunktreglerMitRueckfuehrung.jpg}
+        \end{minipage}
+		\begin{minipage}{7.5cm}
+        \includegraphics[width=7cm]{./bilder/ZweipunktreglerMitRueckfuehrung_dia.jpg}
+        \end{minipage}\\
+		Die Rückkopplung mit einem $PT_1$-Glied über dem Zweipunkteregler bewirkt
+		einen bedeutend kleineren Rippel. Leider ist der Mittelwert noch unterhalb des
+		Sollwertes. Dies kann mit Hilfe eines $PT_1$-Gliedes am Schluss vor der
+		Hauptrückkopplung behoben werden.
+	
+	\subsubsection{Dreipunktregler \formelbuch{59}}
+		\begin{minipage}{9cm}
+		\includegraphics[width=9cm]{./bilder/Dreipunktregler.jpg}
+        \end{minipage}
+		\begin{minipage}{7.5cm}
+        \includegraphics[width=7.5cm]{./bilder/Dreipunktregler_dia.jpg}
+        \end{minipage}\\
+		Damit d = 0 wird muss c=$T_u K_I$ sein.
+\newpage
+		
+		
+	\subsubsection{Zweipunktregler \formelbuch{46,71}}
+		\begin{minipage}{3cm}
+ 		\includegraphics[height=3cm]{./bilder/Zweipunktregler.jpg}
+        \end{minipage}
+		\begin{minipage}{15cm}
+        Ein Zweipunktregler ist ein unstetig arbeitender Regler mit zwei
+        Ausgangszuständen. Je nachdem, ob der Istwert über oder unter dem
+        Sollwert liegt, wird der erste oder der zweite Ausgangszustand
+        eingenommen.   
+        \end{minipage}
+
+		\textbf{Beispiele von Zweipunktereglerschaltungen: \formelbuch{52,53}}\\
+		\begin{minipage}{9cm}
+			\vspace{.5cm}        
+	 		\includegraphics[width=9cm]{./bilder/Zweipunktregler-b+b2.jpg}\\
+			Die Anstiegszeit beträgt nach dem Einschwingvorgang:\\
+			$t_{ein}=\frac{2a}{(b K_p - q_a)K_i K_m}$ \\ \\
+			Die Abfallszeit beträgt nach dem Einschwingvorgang:\\
+			$t_{aus}=\frac{2a}{(b K_p + q_a)K_i K_m}$
+        \end{minipage}
+		\begin{minipage}{9cm}
+			\vspace{.5cm}        
+			\includegraphics[width=9cm]{./bilder/Zweipunktregler-b+b_dia.jpg}
+        \end{minipage}\\
+	\vspace{.5cm}
+	\hrule
+	\vspace{.5cm}
+		\begin{minipage}{9cm}
+ 		\includegraphics[width=9cm]{./bilder/ZweipunktreglerTotglied2.jpg}\\
+			Die Anstiegszeit beträgt nach dem Einschwingvorgang:
+			$t_{ein}$=$T_g\ln(\frac{e^{-\frac{T_u}{T_g}}(A-a)-b K_s}{A+a-b K_s})+T_u$\\ \\
+			Die Abfallszeit beträgt nach dem Einschwingvorgang:
+			$t_{aus}$=$T_g\ln(\frac{A+a-b
+			K_s+\frac{b K_s}{e^{-\frac{T_u}{T_g}}}}{A-a})$\\
+        \end{minipage}
+		\begin{minipage}{9cm}
+		\includegraphics[width=9cm]{./bilder/ZweipunktreglerTotglied_dia.jpg}			
+        \end{minipage}
+
+	\subsection{Stationäre Signale}
+	Für den stationären Fall gelten folgende Bedingungen:
+	\begin{itemize}
+    	\item \textbf{Fehlersignale} werden jeweils als \textbf{Null} angenommen.
+    	\item \textbf{Integratoren} haben am \textbf{Eingang Null}.
+    	\item \textbf{Integratoren} haben am \textbf{Ausgang} einen \textbf{beliebigen Wert}.
+    	\item \textbf{Totzeitglieder} werden kurzgeschlossen.
+    	\item \textbf{PT$_1$-Glieder} wirken als \textbf{P-Glieder} mit $K_P = K_{PT_1}$ behandelt.
+  	\end{itemize}
