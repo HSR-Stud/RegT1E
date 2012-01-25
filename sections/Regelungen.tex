@@ -7,8 +7,7 @@
     		&\textbf{Verlauf Sprungantw.}	&\textbf{Symbol}\\
     	\hline
     	\hline
-    	\textbf{P-Glied}		
-    	&y(t)=K u(t)		&K			&K
+    	\textbf{P-Glied} & $y(t)=K u(t)$	& K & K
     	&\begin{minipage}{2.4cm}
          \includegraphics[width=2.4cm]{./bilder/verlaufP.jpg}
          \end{minipage}
@@ -16,15 +15,9 @@
          \includegraphics[width=2.4cm]{./bilder/p-Glied.jpg}
          \end{minipage}\\
     	\hline
-    	
-    	\begin{minipage}{4cm}
-		\vspace{0.2cm}   
-    	\textbf{I-Glied}\\
-    	\includegraphics[width=3.5cm]{./bilder/OP-Integrator.png}	   
-      \end{minipage}	&
+    	\textbf{I-Glied} &
     	\parbox{3cm}{$\dot{y}= K u(t)$\\
-    				$y=K\int \limits_0^t u(t) dt$\\ \\
-    				$K = - \frac{1}{R \cdot C}$}
+    				$y=K\int \limits_0^t u(t) dt$\\}
     				&$\dfrac{K}{s}$
     	&Kt
     	&\begin{minipage}{2.4cm}
@@ -62,6 +55,24 @@
          \end{minipage}\\
     	\hline
     \end{tabular}
+    
+    \begin{multicols}{3}
+    \textbf{P-Glied (nicht inv. Op-Amp)} \\
+    \includegraphics[height=2.5cm]{./bilder/OP-Amp.png} \\
+    $K = 1 + \frac{R_2}{R_1}$ 
+    \columnbreak
+
+	\textbf{P-Glied (inv. Op-Amp)} \\ 
+	\includegraphics[height=2.5cm]{./bilder/OP-InvAmp.png} \\
+	$K=-\frac{R_2}{R_1}$
+    \columnbreak
+        
+    \textbf{I-Glied} \\ 
+    \includegraphics[height=2.5cm]{./bilder/OP-Integrator.png}\\
+    $K = - \frac{1}{R \cdot C}$
+    
+    
+    \end{multicols}
 
 	\subsection{Stetigähnliche Regler}
 		\subsubsection{Rückkopplung des Reglers}
@@ -84,7 +95,6 @@
         \includegraphics[width=7.5cm]{./bilder/Dreipunktregler_dia.jpg}
         \end{minipage}\\
 		Damit d = 0 wird muss c=$T_u K_I$ sein.
-\newpage
 		
 		
 	\subsubsection{Zweipunktregler}
