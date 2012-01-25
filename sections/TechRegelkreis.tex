@@ -75,30 +75,75 @@
 \includegraphics[height=4.5cm]{./bilder/Grundregelkreis_klein.jpg}
 
 
-	\subsection{Klassifizierung technischer Systeme}	
-		\begin{tabular}{|l | l | l|}
+		
+		\begin{sidewaystable}
+		\subsection{Klassifizierung technischer Systeme}
+		\begin{tabular}{|p{3cm}|p{2.5cm}|p{7cm}|p{11.5cm}|}
         	\hline
-        	einfach					&	schwierig			&	\textcolor{red}{\underline{für Regler}}\\
+        	
+        	einfach &
+        	schwierig &
+        	\textcolor{red}{\underline{für Regler}} &
+        	Bedeutung des ersten Begriffs\\
         	\hline
+        	
+        	statisch &
+        	\textcolor{red}{\underline{dynamisch}} &
+        	&
+        	Beschreiben nur den Gleichgewichtszustand (Vorgeschichte nicht
+        	berücksichtigt)\\
         	\hline
-        	statisch				&	\textcolor{red}{\underline{dynamisch}}	&	\\
+        	
+        	\textcolor{red}{\underline{linear}}	&
+        	nichtlinear &
+        	Ausnahmen: 2-, 3-Pt.Regler Simulation &
+        	Assoziativ und Kommutativgesetz berücksichtigt \newline (x=X, 2x=2X;
+        	y=Y, x+y=X+Y)\\
         	\hline
-        	\textcolor{red}{\underline{linear}}			&	nichtlinear			&	Ausnahmen: 2-, 3-Pt.Regler
-        	Simulation\\ 
+        	
+        	\textcolor{red}{\underline{zeitinvariant}} &
+        	zeitvariant &
+        	&
+        	unabhängig von zeitlicher Verschiebung \\
         	\hline
-        	\textcolor{red}{\underline{zeitinvariant}}	&	zeitvariant&\\
+        	
+        	\textcolor{red}{\underline{Zeitkontinuierlich}} &
+        	zeitdiskret &
+        	&
+        	Signal hat zu jedem Zeitpunkt einen Wert\\
+        	$\dot{y}=\frac{ku-y}{T}$ &
+        	$y_{k+1}=a y_k + b u_k$	&
+        	&
+        	\\
         	\hline
-        	\textcolor{red}{\underline{Zeitkontinuierlich}}&	zeitdiskret	&\\
-        	$\dot{y}=\frac{ku-y}{T}$&	$y_{k+1}=a y_k + b u_k$	&\\
+        	
+        	\textcolor{red}{\underline{wertkontinuierlich}}&
+        	wertdiskret&
+        	&
+        	Signal kann alle Werte eines Intervalles annehmen\\
         	\hline
-        	\textcolor{red}{\underline{wertkontinuierlich}}&	wertdiskret&\\
+        	
+        	\textcolor{red}{\underline{kausal}}	&
+        	akausal	&
+        	&
+        	Gleiche Ursache führt zur gleichen Wirkung\\
         	\hline
-        	\textcolor{red}{\underline{kausal}}			&	akausal	&\\
+        	
+        	\textcolor{red}{\underline{konzentrierte}} &
+        	verteilte &
+        	zB.	Stromleitung: &
+        	\\
+        	\textcolor{red}{\underline{Parameter}} &
+        	Parameter	&
+        	ein R und ein C/ sehr viele RC-Glieder in Serie &
+        	\\
         	\hline
-        	\textcolor{red}{\underline{konzentrierte}}	&	verteilte			&	zB. Stromleitung: \\
-        	\textcolor{red}{\underline{Parameter}}		&	Parameter			&	ein R und ein C/ sehr viele
-        	RC-Glieder in Serie\\
-        	\hline
-        	\textcolor{red}{\underline{deterministisch}}	&	stochastisch		&	vorhersehbar/zufällig\\
+        	
+        	\textcolor{red}{\underline{deterministisch}}	&
+        	stochastisch &
+        	vorhersehbar/zufällig &
+        	Das Zeitverhalten lässt sich aufgrund seiner Gleichungen
+        	``reproduzieren"\\
         	\hline
         \end{tabular}
+        \end{sidewaystable}
