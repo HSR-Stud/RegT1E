@@ -15,7 +15,20 @@
 		\begin{minipage}[c]{6cm}
 			\subsection{Linearitätstest \formelbuch{80}}
 			\includegraphics[width=6cm]{bilder/linearitaetstest}
-		\end{minipage}
+		\end{minipage} \\
+		
+	Bei Gleichungen muss folgendes Unterschieden werden: \\
+	\begin{multicols}{2}
+	Linearität in den \textbf{Variablen} \\
+	$y = \frac{a_0}{1-a_1} x_1 + a_0 x_2$ \\
+	ist linear in den Variablen $x_i$, aber nicht in den Parametern $a_i$. \\
+	
+	Linearität in den \textbf{Parametern} \\
+	$y = a_2 x^2 + a_1 \sin(2x) + 2.4 a_0$ \\
+	ist linear in den Parametern $a_i$, aber nicht in der Variable $x$. \\
+	\end{multicols}
+	Die Gleichung $y=a_0 x_0+ a_1 x_1$ ist linear in Variablen und Parametern - 
+	die Gleichung $y=x_0^{a_0}+x_1^{a_1}$ ist nicht linear.
 	  	
 	\subsection{Erwünschte Nichtlinearität \formelbuch{84}}
 		In einem Prozess sind Linearitäten meist erwünscht, da sie meist mit
@@ -35,7 +48,6 @@
 		- I-Glied \\
 		- PT1-Glied
 	\end{minipage}
-
 	\subsection{Erfassen von nicht linearen Kurven}
 	\subsubsection{Messung einer statischen Kennlinie \formelbuch{86}}
 	\begin{minipage}{10cm}
@@ -51,7 +63,6 @@
 		$\alpha$ die Rampensteilheit ist und T die Zeitkonstante des PT1-Gliedes.
 
 	\subsubsection{Mathematische Erfassung einer Messkurve \formelbuch{89}}
-
 	\begin{floatingfigure}[r]{12cm}
     \includegraphics[width=10cm,height=3cm]{./bilder/KennlinieMitStuetzwerten.jpg}
 	\end{floatingfigure}
@@ -95,9 +106,7 @@
            		\end{enumerate}
 		\end{enumerate}
 	\end{enumerate}
-    
-	 
-	
+
 	\subsection{Linearisierung}
 		\subsubsection{Modelleinschränkung \formelbuch{92}}
 			Praktisch alle physikalische Systeme unterliegen gewissen Aussteuergrenzen.
@@ -110,10 +119,24 @@
 		\subsubsection{Arbeitspunkt \formelbuch{93}}
 			Wenn eine Kennlinie für einen bestimmten Aussteuerung einen nicht zu grosse
 			Krümmung hat, kann man in der Näherung diese durch die Tangente ersetzen, und
-			somit wieder linear rechnen. Zur Berechnung werden die Grössen durch 
-			$x_0+\Delta x$ ersetzt. \\
-			\textbf{Trigonometrische Funktionen bei Arbeitspunkt $\alpha = 0$}: $\qquad \sin \alpha \approx
-			\alpha \qquad \tan \alpha \approx \alpha \qquad \cos \alpha \approx 1$
+			somit wieder linear rechnen. \\
+			Trigonometrische Funktionen bei Arbeitspunkt $\alpha = 0$: $\qquad \sin \alpha \approx
+			\alpha \qquad \tan \alpha \approx \alpha \qquad \cos \alpha \approx 1$ \\
+			\textbf{Vorgehen} \\
+			\begin{minipage}[c]{6cm}
+				\includegraphics[width=6cm]{bilder/LinArbeitspunkt}
+			\end{minipage}
+			\begin{minipage}[c]{12cm}
+				\begin{enumerate}
+					\item DGL des Systems bestimmen
+					\item Alle Signale darstellen als $u(t)=u_0+\Delta u,\,v(t)=v_0+\Delta v,\dots$
+					\item Arbeitspunkte $u_0,v_0,\dots$ = stationärer Zustand bestimmen
+					\item Signaländerungen $\Delta u, \Delta v, \dots$ linearisieren
+							(Tangente an Kennline)
+					\item DGL durch Signaländerungen darstellen.
+					\item Blockschaltbild mit Signaländerungen darstellen (siehe links)
+				\end{enumerate}
+			\end{minipage}
 			
 		\subsubsection{Durch inverse Kennlinie \formelbuch{94}}
 		\begin{minipage}{11cm}

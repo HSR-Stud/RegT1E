@@ -71,8 +71,17 @@
     \includegraphics[height=2.5cm]{./bilder/OP-Integrator.png}\\
     $K = - \frac{1}{R \cdot C}$
     
-    
     \end{multicols}
+    
+    \subsection{Stationäre Signale}
+	Für den stationären Fall gelten folgende Bedingungen:
+	\begin{itemize}
+    	\item \textbf{Fehlersignale} werden jeweils als \textbf{Null} angenommen.
+    	\item \textbf{Integratoren} haben am \textbf{Eingang Null}.
+    	\item \textbf{Integratoren} haben am \textbf{Ausgang} einen \textbf{beliebigen Wert}.
+    	\item \textbf{Totzeitglieder} werden kurzgeschlossen.
+    	\item \textbf{PT$_1$-Glieder} wirken als \textbf{P-Glieder} mit $K_P = K_{PT_1}$ behandelt.
+  	\end{itemize}
 
 	\subsection{Zwei- und Dreipunktregler}
 	
@@ -86,7 +95,8 @@
         Sollwert liegt, wird der erste oder der zweite Ausgangszustand
         eingenommen.   
         \end{minipage}
-
+        
+		\newpage
 		\textbf{Beispiele von Zweipunktereglerschaltungen:}\\
 		Zweipunktregler mit symmetrischer Kennlinie \formelbuch{52} \\
 		\begin{minipage}{9cm}
@@ -137,13 +147,3 @@
         \includegraphics[width=7.5cm]{./bilder/Dreipunktregler_dia.jpg}
         \end{minipage}\\
 		Damit d = 0 wird muss c=$T_u K_I$ sein.
-
-	\subsection{Stationäre Signale}
-	Für den stationären Fall gelten folgende Bedingungen:
-	\begin{itemize}
-    	\item \textbf{Fehlersignale} werden jeweils als \textbf{Null} angenommen.
-    	\item \textbf{Integratoren} haben am \textbf{Eingang Null}.
-    	\item \textbf{Integratoren} haben am \textbf{Ausgang} einen \textbf{beliebigen Wert}.
-    	\item \textbf{Totzeitglieder} werden kurzgeschlossen.
-    	\item \textbf{PT$_1$-Glieder} wirken als \textbf{P-Glieder} mit $K_P = K_{PT_1}$ behandelt.
-  	\end{itemize}
