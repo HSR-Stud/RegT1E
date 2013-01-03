@@ -1,6 +1,6 @@
-\section{Linearisierung \skript{76}}
-	\begin{multicols}{2}
-		\subsection{LTI-Systeme \skript{83}}
+\section{Linearisierung \formelbuch{76}}
+	\begin{minipage}[c]{10cm}
+		\subsection{LTI-Systeme \formelbuch{83}}
 			\renewcommand{\arraystretch}{1.5}
 			\begin{tabular}{|l|l|}
 				\hline
@@ -11,12 +11,13 @@
 				\hline    
 			\end{tabular}
 			\renewcommand{\arraystretch}{1}
-		\columnbreak
-			\subsection{Linearitätstest \skript{80}}
-			\includegraphics{bilder/linearitaetstest}
-		\end{multicols}
+		\end{minipage}
+		\begin{minipage}[c]{6cm}
+			\subsection{Linearitätstest \formelbuch{80}}
+			\includegraphics[width=6cm]{bilder/linearitaetstest}
+		\end{minipage}
 	  	
-	\subsection{Erwünschte Nichtlinearität \skript{84}}
+	\subsection{Erwünschte Nichtlinearität \formelbuch{84}}
 		In einem Prozess sind Linearitäten meist erwünscht, da sie meist mit
 		Gleichungen zu lösen sind.
 		Viele Efekte, wie zum Beispiel die Modulation oder so sind aber gerade erst
@@ -29,14 +30,14 @@
 		- Addition \\
 		- Integration \\
 		- Differentiation \\
-		und daraus folgt, dass folgende Glieder auch linear sind: \\
+		daraus folgt, dass folgende Glieder auch linear sind: \\
 		- P-Glied \\
 		- I-Glied \\
 		- PT1-Glied
 	\end{minipage}
 
 	\subsection{Erfassen von nicht linearen Kurven}
-	\subsubsection{Messung einer statischen Kennlinie \skript{86}}
+	\subsubsection{Messung einer statischen Kennlinie \formelbuch{86}}
 	\begin{minipage}{10cm}
 		\includegraphics[width=7cm]{./bilder/NichtlinearMitPT1.jpg}   
     \end{minipage}
@@ -49,7 +50,7 @@
 		``unechten" Hysterese verzerrt, die eine Hysteresebreite von 2$\alpha$ T, wobei
 		$\alpha$ die Rampensteilheit ist und T die Zeitkonstante des PT1-Gliedes.
 
-	\subsubsection{Mathematische Erfassung einer Messkurve \skript{89}}
+	\subsubsection{Mathematische Erfassung einer Messkurve \formelbuch{89}}
 
 	\begin{floatingfigure}[r]{12cm}
     \includegraphics[width=10cm,height=3cm]{./bilder/KennlinieMitStuetzwerten.jpg}
@@ -98,7 +99,7 @@
 	 
 	
 	\subsection{Linearisierung}
-		\subsubsection{Modelleinschränkung \skript{92}}
+		\subsubsection{Modelleinschränkung \formelbuch{92}}
 			Praktisch alle physikalische Systeme unterliegen gewissen Aussteuergrenzen.
 			In diesen können sie linear sein. Es muss darauf achten, dass  das System
 			diese nicht überschreitet. \\
@@ -106,7 +107,7 @@
 			Ab dann bewegt sich die Regelung nur in einem sehr kleinen Bereich um den
 			Arbeitspunkt, wo die Kennlinie linearisiert werden kann. \\
 			
-		\subsubsection{Arbeitspunkt \skript{93}}
+		\subsubsection{Arbeitspunkt \formelbuch{93}}
 			Wenn eine Kennlinie für einen bestimmten Aussteuerung einen nicht zu grosse
 			Krümmung hat, kann man in der Näherung diese durch die Tangente ersetzen, und
 			somit wieder linear rechnen. Zur Berechnung werden die Grössen durch 
@@ -114,7 +115,7 @@
 			\textbf{Trigonometrische Funktionen bei Arbeitspunkt $\alpha = 0$}: $\qquad \sin \alpha \approx
 			\alpha \qquad \tan \alpha \approx \alpha \qquad \cos \alpha \approx 1$
 			
-		\subsubsection{Durch inverse Kennlinie \skript{94}}
+		\subsubsection{Durch inverse Kennlinie \formelbuch{94}}
 		\begin{minipage}{11cm}
 			\includegraphics[width=10cm]{./bilder/Kennlinienkompensation.jpg}
         \end{minipage}
@@ -125,7 +126,7 @@
 			beheben. Das System als ganzes reagiert nun linear, das Innere des System
 			jedoch immer noch nicht, wie man an den Kennlinien gut erkennen kann.
 			
-		\subsubsection{Durch Gegenkopplung \skript{96}}
+		\subsubsection{Durch Gegenkopplung \formelbuch{96}}
 				\begin{minipage}{11cm}
 			\includegraphics[width=10cm]{./bilder/Gegenkopplung.jpg}
         \end{minipage}
