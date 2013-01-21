@@ -1,26 +1,55 @@
-\section{Linearisierung}
-	\subsection{LTI-Systeme}
-	  	\renewcommand{\arraystretch}{1.5}
-		\begin{tabular}{|l|l|}
-	    	\hline
-	    	\textbf{Linearität} & \textbf{Zeitinvarianz}\\
-	    	\hline
-	    	$\Phi(x1+x2)=\Phi(x1)+\Phi(x2)$ & $\Phi(x(t-t_0)=\Phi(x)\cdot x(t-t_0)$ \\
-	    	$\Phi(c\cdot x)=c\cdot \Phi(x)$ & \\
-			\hline    
-	    \end{tabular}
-	  	\renewcommand{\arraystretch}{1}
+\section{Linearisierung \formelbuch{76}}
+	\begin{minipage}[c]{10cm}
+		\subsection{LTI-Systeme \formelbuch{83}}
+			\renewcommand{\arraystretch}{1.5}
+			\begin{tabular}{|l|l|}
+				\hline
+				\textbf{Linearität} & \textbf{Zeitinvarianz}\\
+				\hline
+				$\Phi(x1+x2)=\Phi(x1)+\Phi(x2)$ & $\Phi(x(t-t_0)=\Phi(x)\cdot x(t-t_0)$ \\
+				$\Phi(c\cdot x)=c\cdot \Phi(x)$ & \\
+				\hline    
+			\end{tabular}
+			\renewcommand{\arraystretch}{1}
+		\end{minipage}
+		\begin{minipage}[c]{6cm}
+			\subsection{Linearitätstest \formelbuch{80}}
+			\includegraphics[width=6cm]{bilder/linearitaetstest}
+		\end{minipage} \\
+		
+	Bei Gleichungen muss folgendes Unterschieden werden: \\
+	\begin{multicols}{2}
+	Linearität in den \textbf{Variablen} \\
+	$y = \frac{a_0}{1-a_1} x_1 + a_0 x_2$ \\
+	ist linear in den Variablen $x_i$, aber nicht in den Parametern $a_i$. \\
+	
+	Linearität in den \textbf{Parametern} \\
+	$y = a_2 x^2 + a_1 \sin(2x) + 2.4 a_0$ \\
+	ist linear in den Parametern $a_i$, aber nicht in der Variable $x$. \\
+	\end{multicols}
+	Die Gleichung $y=a_0 x_0+ a_1 x_1$ ist linear in Variablen und Parametern - 
+	die Gleichung $y=x_0^{a_0}+x_1^{a_1}$ ist nicht linear.
 	  	
-	\subsection{Erwünschte Nichtlinearität}
+	\subsection{Erwünschte Nichtlinearität \formelbuch{84}}
 		In einem Prozess sind Linearitäten meist erwünscht, da sie meist mit
 		Gleichungen zu lösen sind.
 		Viele Efekte, wie zum Beispiel die Modulation oder so sind aber gerade erst
 		durch Nichtlinearitäten möglich. Daher unterscheidet man:\\
-	\includegraphics[width=8cm]{./bilder/Liste_Nichtlinearitaeten.jpg}
-
-
+	\begin{minipage}[c]{8cm}
+		\includegraphics[width=8cm]{./bilder/Liste_Nichtlinearitaeten.jpg}
+	\end{minipage}
+	\begin{minipage}[c]{8cm}
+		\textbf{Lineare Operationen} \\
+		- Addition \\
+		- Integration \\
+		- Differentiation \\
+		daraus folgt, dass folgende Glieder auch linear sind: \\
+		- P-Glied \\
+		- I-Glied \\
+		- PT1-Glied
+	\end{minipage}
 	\subsection{Erfassen von nicht linearen Kurven}
-	\subsubsection{Messung einer statischen Kennlinie}
+	\subsubsection{Messung einer statischen Kennlinie \formelbuch{86}}
 	\begin{minipage}{10cm}
 		\includegraphics[width=7cm]{./bilder/NichtlinearMitPT1.jpg}   
     \end{minipage}
@@ -33,8 +62,7 @@
 		``unechten" Hysterese verzerrt, die eine Hysteresebreite von 2$\alpha$ T, wobei
 		$\alpha$ die Rampensteilheit ist und T die Zeitkonstante des PT1-Gliedes.
 
-	\subsubsection{Mathematische Erfassung einer Messkurve}
-
+	\subsubsection{Mathematische Erfassung einer Messkurve \formelbuch{89}}
 	\begin{floatingfigure}[r]{12cm}
     \includegraphics[width=10cm,height=3cm]{./bilder/KennlinieMitStuetzwerten.jpg}
 	\end{floatingfigure}
@@ -78,22 +106,41 @@
            		\end{enumerate}
 		\end{enumerate}
 	\end{enumerate}
-    
-	 
 	
+\newpage
+
 	\subsection{Linearisierung}
-		\subsubsection{Modelleinschränkung}
+		\subsubsection{Modelleinschränkung \formelbuch{92}}
 			Praktisch alle physikalische Systeme unterliegen gewissen Aussteuergrenzen.
 			In diesen können sie linear sein. Es muss darauf achten, dass  das System
-			diese nicht überschreitet.
+			diese nicht überschreitet. \\
+			z.B. Festwert-Regelung: Die Kennlinie wird nur beim Einschalten durchlaufen.
+			Ab dann bewegt sich die Regelung nur in einem sehr kleinen Bereich um den
+			Arbeitspunkt, wo die Kennlinie linearisiert werden kann. \\
 			
-		\subsubsection{Arbeitspunkt}
+		\subsubsection{Arbeitspunkt \formelbuch{93}}
 			Wenn eine Kennlinie für einen bestimmten Aussteuerung einen nicht zu grosse
 			Krümmung hat, kann man in der Näherung diese durch die Tangente ersetzen, und
-			somit wieder linear rechnen. \\ \\
-			\textbf{Trigonometrische Funktionen bei Arbeitspunkt $\alpha = 0$}: $\qquad \sin \alpha \approx
-			\alpha \qquad \tan \alpha \approx \alpha \qquad \cos \alpha \approx 1$
-		\subsubsection{Durch inverse Kennlinie}
+			somit wieder linear rechnen. \\
+			Trigonometrische Funktionen bei Arbeitspunkt $\alpha = 0$: $\qquad \sin \alpha \approx
+			\alpha \qquad \tan \alpha \approx \alpha \qquad \cos \alpha \approx 1$ \\
+			\textbf{Vorgehen} \\
+			\begin{minipage}[c]{6cm}
+				\includegraphics[width=6cm]{bilder/LinArbeitspunkt}
+			\end{minipage}
+			\begin{minipage}[c]{12cm}
+				\begin{enumerate}
+					\item DGL des Systems bestimmen
+					\item Alle Signale darstellen als $u(t)=u_0+\Delta u,\,v(t)=v_0+\Delta v,\dots$
+					\item Arbeitspunkte $u_0,v_0,\dots$ = stationärer Zustand bestimmen
+					\item Signaländerungen $\Delta u, \Delta v, \dots$ linearisieren
+							(Tangente an Kennline)
+					\item DGL durch Signaländerungen darstellen.
+					\item Blockschaltbild mit Signaländerungen darstellen (siehe links)
+				\end{enumerate}
+			\end{minipage}
+			
+		\subsubsection{Durch inverse Kennlinie \formelbuch{94}}
 		\begin{minipage}{11cm}
 			\includegraphics[width=10cm]{./bilder/Kennlinienkompensation.jpg}
         \end{minipage}
@@ -104,7 +151,7 @@
 			beheben. Das System als ganzes reagiert nun linear, das Innere des System
 			jedoch immer noch nicht, wie man an den Kennlinien gut erkennen kann.
 			
-		\subsubsection{Durch Gegenkopplung}
+		\subsubsection{Durch Gegenkopplung \formelbuch{96}}
 				\begin{minipage}{11cm}
 			\includegraphics[width=10cm]{./bilder/Gegenkopplung.jpg}
         \end{minipage}
