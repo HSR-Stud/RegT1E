@@ -2,20 +2,34 @@
 \subsection{Definitionen \formelbuch{14}}
 
 \begin{description}[leftmargin=2.5cm]
- \item[System] Eine Anordnung von Gebilden, die miteinander in Beziehung stehen
-        	   und die sich gegenüber der Umgebung abgrenzen lasen.
+ \item[System]	Eine Anordnung von Gebilden, welches von der Umwelt abgegrenzt ist, aber
+								mit ihr über Inputs/Outputs in einer Beziehung stehen.
  \item[Prozess] Die Gesammtheit der zusammenwirkenden Vorgänge in einem System,
         		durch die Materie, Energie, Informationen umgeformt, transportiert und
         		gespeichert wird.
+ \item[Modell]	Ein Modell ist eine Abbildung eines Systems in ein anderes begriffliches oder
+								gegenständliches System, dass den Prozess bezüglich ausgewählter Fragestellung
+								hinreichend genau beschreibt.
  \item[SISO] Single Input - Single Output
  \item[MIMO] Multi Input - Multi Output
- \item[Steuerung] ohne Rückkopplung (open-loop)\newline
- 				  - kann bei \textbf{stabiler} Strecke \textbf{nicht instabil} werden
- \item[Regelung] mit Rückkopplung (Gegenkopplung) (closed-loop) \newline
+ \item[Steuerung]	Bei einer Steuerung wird der Energiestrom über mindestens einen Verstärker (Stelleinrichtung)
+									beeinflusst, so dass die Prozessaufgabe erfüllt wird, wobei die Steuerinformation
+									von Glied zu Glied läuft (Steuerkette) \newline
+									-ohne Rückkopplung \newline
+									- kann bei \textbf{stabiler} Strecke \textbf{nicht instabil} werden \newline
+									- open loop
+ \item[Regelung] mit Rückkopplung (wirkt als Gegenkopplung) \newline
  				 - immer ein Vergleichsglied zwischen Führungsgrösse (Sollwert) und
  				 Regelgrösse (Istwert) \newline
  				 - kann auf veränderte Störgrössen reagieren \newline
- 				 - kann bei \textbf{stabiler} Strecke \textbf{instabil} werden.
+ 				 - kann bei \textbf{stabiler} Strecke \textbf{instabil} werden. \newline
+				 - closed loop
+ \item[Prozess ohne Ausgleich]
+				Die Ausgangsgrösse ist für $t \rightarrow \infty$ nicht begrenzt
+ \item[Prozess mit Ausgleich]
+				Die Ausgangsgrösse ist für $t \rightarrow \infty$ begrenzt. Ein Prozess wo sich selber ausgleicht wird oft
+				mit einem $PT_1$-Glied modeliert.
+				
 \end{description}
 
 	\begin{tabular}{|p{2.7cm}|p{5.4cm}|l|}
@@ -24,7 +38,7 @@
     	Erklärung} \formelbuch{20}\\
 		\hline
 		Regelung /
-		Regelkreis			& closed loop control / control loop & \\
+		Regelkreis			& closed loop control ; control loop & \\
 		\hline
 		Regelstrecke
     	Reglekreis			&plant controlled system	&Der aufgabengemäss zu beeinflussende
@@ -59,7 +73,7 @@
     						set value& w (DIN)\\
     	\hline
     	Störgrösse z Last	&disturbance variable;
-    						load&\\
+    						load& auch d\\
     	\hline
     	Stellgrösse u		&manipulatetd (correcting)
     						variable& y (DIN)\\
@@ -78,13 +92,13 @@
 		
 		\begin{sidewaystable}
 		\subsection{Klassifizierung technischer Systeme}
-		\begin{tabular}{|p{3cm}|p{2.5cm}|p{7cm}|p{11.5cm}|}
+		\begin{tabular}{|p{3cm}|p{2.5cm}|p{7cm}|p{5.5cm}|}
         	\hline
         	
         	einfach &
         	schwierig &
-        	\textcolor{red}{\underline{für Regler}} &
-        	Bedeutung des ersten Begriffs\\
+        	für Regler &
+        	Bedeutung des \textbf{ersten} Begriffs\\
         	\hline
         	
         	statisch &
@@ -126,7 +140,7 @@
         	\textcolor{red}{\underline{kausal}}	&
         	akausal	&
         	&
-        	Gleiche Ursache führt zur gleichen Wirkung\\
+        	Die Ausgangsgrösse hängt nicht von zukünftigen Ereignissen ab\\
         	\hline
         	
         	\textcolor{red}{\underline{konzentrierte}} &
@@ -146,4 +160,5 @@
         	``reproduzieren"\\
         	\hline
         \end{tabular}
-        \end{sidewaystable}
+				\textcolor{red}{\underline{werden für Regler vorausgesetzt!}}
+        %\end{sidewaystable}
