@@ -1,6 +1,9 @@
-*.aux
-*.pdf
-*.DS_STORE
-*.log
+/RegT1E.pdf
+/*.aux
+/*.log
+/*.out
+/*.tcp
+/*.tps
 *.synctex*
 /tmp
+*.DS_STORE

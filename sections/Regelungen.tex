@@ -40,7 +40,7 @@
     	 \begin{minipage}{4cm}
 			\vspace{0.2cm}
 			\textbf{PT$_1$-Glied} \formelbuch{37}\\
-    	   	\includegraphics[width=4cm]{./bilder/PT1.png}        
+			%    	   	\includegraphics[width=4cm]{./bilder/PT1.png}   
          \end{minipage}
 		 &\parbox{3cm}{$T\dot{y}+y=K u(t)$\\\\
 		 $T = \dfrac{1}{K_i \cdot K_p}$\\
@@ -54,8 +54,23 @@
          \includegraphics[width=2.3cm]{./bilder/Pt1-Glied.jpg}
          \end{minipage}\\
     	\hline
-    \end{tabular} 
- 
+    	\multicolumn{6}{|l|}{
+    		\parbox{18cm}{\textbf{PT$_1$-Glied mit Grundelementen} ($K$: Verstärkung; $T$: Zeitkonstante):\\
+    				\begin{minipage}{10cm}
+    				    \hspace*{4cm}
+    				    \includegraphics[width=4cm]{./bilder/PT1.png}
+    				\end{minipage}
+    				\begin{minipage}{7cm}
+    					\includegraphics[width=6cm]{./bilder/PT1_2.png}
+    				\end{minipage}
+    		}
+    	}\\
+    	\hline
+
+    \end{tabular}
+		
+    
+
     \begin{multicols}{3}
     \textbf{P-Glied (nicht inv. Op-Amp)} \\
     \includegraphics[height=2.5cm]{./bilder/OP-Amp.png} \\
@@ -74,25 +89,46 @@
     \end{multicols}
     
     
-    \begin{minipage}{11cm}
+    \begin{minipage}{16cm}
     \subsection{Stationäre Signale}
 	Für den stationären Fall gelten folgende Bedingungen:
 	\begin{itemize}
-    	\item \textbf{Fehlersignale} werden jeweils als \textbf{Null} angenommen.
     	\item \textbf{Integratoren} haben am \textbf{Eingang Null}.
     	\item \textbf{Integratoren} haben am \textbf{Ausgang} einen \textbf{beliebigen Wert}.
     	\item \textbf{Totzeitglieder} werden kurzgeschlossen.
     	\item \textbf{PT$_1$-Glieder} wirken als \textbf{P-Glieder} mit $K_P = K_{PT_1}$ behandelt.
+    	\item (\textbf{Fehlersignale} werden jeweils als \textbf{Null} angenommen.) \textbf{Mit Vorsicht annehmen}
   	\end{itemize}
-  	\end{minipage}
-  	\begin{minipage}{7cm}
-  		\textbf{Alternative Darstellung des PT$_1$-Glied}\\
-  		\includegraphics[width=6cm]{./bilder/PT1_2.png}
   	\end{minipage} \\
 
 
 	\subsection{Zwei- und Dreipunktregler}
-	\subsubsection{Zweipunktregler \formelbuch{46}}
+
+	\subsection{Stetigähnliche Regler}
+		\subsubsection{Rückkopplung des Reglers}
+		\begin{minipage}{9cm}
+		\includegraphics[width=8.5cm]{./bilder/ZweipunktreglerMitRueckfuehrung.jpg}
+        \end{minipage}
+		\begin{minipage}{7.5cm}
+        \includegraphics[width=7cm]{./bilder/ZweipunktreglerMitRueckfuehrung_dia.jpg}
+        \end{minipage}\\
+		Die Rückkopplung mit einem $PT_1$-Glied über dem Zweipunkteregler bewirkt
+		einen bedeutend kleineren Rippel. Leider ist der Mittelwert noch unterhalb des
+		Sollwertes. Mithilfe eines PI-Reglers vor dem Zweipunkteregler, kann der IST-Wert
+		angehoben werden.
+	
+	\subsubsection{Dreipunktregler}
+		\begin{minipage}{9cm}
+		\includegraphics[width=9cm]{./bilder/Dreipunktregler.jpg}
+        \end{minipage}
+		\begin{minipage}{7.5cm}
+        \includegraphics[width=7.5cm]{./bilder/Dreipunktregler_dia.png}
+        \end{minipage}\\
+		gewünscht: $d = 0 \rightarrow c = K_I \cdot T_u \cdot b$\\
+		Falls mit PT$_1$-Glied $\rightarrow c = K_I \cdot K_s \cdot b (T_u + T_G)$
+		
+		
+	\subsubsection{Zweipunktregler}
 		\begin{minipage}{3cm}
  		\includegraphics[height=3cm]{./bilder/Zweipunktregler.jpg}
         \end{minipage}
@@ -103,8 +139,7 @@
         eingenommen. 
         \end{minipage}
         
-		\newpage
-		\textbf{Beispiele von Zweipunkte-Reglerschaltungen:}\\ \\
+	\textbf{Beispiele von Zweipunkte-Reglerschaltungen:}\\ \\
 		\textbf{Zweipunktregler mit symmetrischer Kennlinie \formelbuch{52}} \\
 		\begin{minipage}{9cm}
 			\vspace{.5cm}        
@@ -118,6 +153,9 @@
 			\vspace{.5cm}        
 			\includegraphics[width=9cm]{./bilder/Zweipunktregler-b+b_dia.jpg}
         \end{minipage}\\
+         Einfüllen mit Abfluss: $y = y_0 + K_M \cdot K_I(K_p \cdot b - Q_a)(t-t_0); \qquad$ 
+         Entleeren: $y=y_1 + K_M \cdot K_I(K_p(-b) - Q_a)(t-t_0)$
+         
 
 	\vspace{.5cm}
 		\textbf{Zweipunktregler an ausgleichender Strecke \formelbuch{53}} \\
@@ -133,23 +171,6 @@
 		\includegraphics[width=9cm]{./bilder/ZweipunktreglerTotglied_dia.jpg}			
         \end{minipage}
     
-    \subsubsection{Rückkopplung des Reglers \formelbuch{57}}
-		\begin{minipage}{9cm}
-		\includegraphics[width=8.5cm]{./bilder/ZweipunktreglerMitRueckfuehrung.jpg}
-        \end{minipage}
-		\begin{minipage}{7.5cm}
-        \includegraphics[width=7cm]{./bilder/ZweipunktreglerMitRueckfuehrung_dia.jpg}
-        \end{minipage}\\
-		Die Rückkopplung mit einem $PT_1$-Glied über dem Zweipunkteregler bewirkt
-		einen bedeutend kleineren Rippel. Leider ist der Mittelwert noch unterhalb des
-		Sollwertes. Dies kann mit Hilfe eines $PT_1$-Gliedes am Schluss vor der
-		Hauptrückkopplung behoben werden.
-	
-	\subsubsection{Dreipunktregler \formelbuch{59}}
-		\begin{minipage}{9cm}
-		\includegraphics[width=9cm]{./bilder/Dreipunktregler.jpg}
-        \end{minipage}
-		\begin{minipage}{7.5cm}
-        \includegraphics[width=7.5cm]{./bilder/Dreipunktregler_dia.png}
-        \end{minipage}\\
-		Damit d = 0 wird muss c=$T_u K_I$ sein. Falls ein PT$_1$-Glied vorkommt muss $c=K_I K_s b(T_u + T_G)$ sein.
+ 	$\Delta y = b\cdot K_s - e^{-\frac{T_u}{T_G}}(b\cdot K_s - 2a); \qquad$
+	$y_m = \frac{y_{min}+y_{max}}{2}=e^{-\frac{T_u}{T_G}}\cdot A + \frac{b\cdot K_s}{2}(1-e^{-\frac{T_u}{T_G}}$
+

@@ -17,14 +17,27 @@
 			\includegraphics[width=6cm]{bilder/linearitaetstest}
 		\end{minipage} \\
 		
+%	\begin{minipage}[c]{8cm}
+%			\textbf{Lineare Operationen} \\
+%			- Addition \\
+%			- Integration \\
+%			- Differentiation \\
+%			daraus folgt, dass folgende Glieder auch linear sind: \\
+%			- P-Glied \\
+%			- I-Glied \\
+%			- PT1-Glied
+%	\end{minipage}
+		
+
+
 	\subsection{Linearität in den Parametern}
-		Eine Funktion $f$ ist linear in den Parametern, wenn sie durch eine Linearkombination der Parameter geschrieben werden kann: \\
+		Eine Funktion $f$ ist linear in den Parametern, wenn sie durch eine Linearkombination der Parameter geschrieben werden kann. Die Funktionen in $t$ müssen dabei nicht linear sein: \\
 		$f(t) = \sum\limits_{j=1}^m a_j \cdot f_j(t)$ \\
-		Beispiel: $y = \left[\begin{matrix} u & w \end{matrix} \right] \cdot \left[\begin{matrix} a_1 \\ a_2 \end{matrix}\right]$ ist linear in den Parametern $a$
+		Beispiel: $y = \left[\begin{matrix} t^2 & sin(t) \end{matrix} \right] \cdot \left[\begin{matrix} a_1 \\ a_2 \end{matrix}\right]$ ist linear in den Parametern $a$
 	
 	\subsection{Einfluss der Lage einer Nichtlinearität}
 		\begin{enumerate}
-			\item	nicht lineare Komponente dürfen \underline{nicht} vertauscht werden!\\
+			\item	nicht lineare Blöcke dürfen \underline{nicht} vertauscht werden!\\
 			\item vertauschen von linearen Blöcken erlaubt falls ...\\
 								... Anfangsbedingung = 0\\
 								... interne Signale keine Rolle spielen
@@ -38,29 +51,34 @@
 	\begin{minipage}[c]{8cm}
 		\includegraphics[width=8cm]{./bilder/Liste_Nichtlinearitaeten.jpg}
 	\end{minipage}
-	\begin{minipage}[c]{8cm}
-		\textbf{Lineare Operationen} \\
-		- Addition \\
-		- Integration \\
-		- Differentiation \\
-		daraus folgt, dass folgende Glieder auch linear sind: \\
-		- P-Glied \\
-		- I-Glied \\
-		- PT1-Glied
-	\end{minipage}
-	\subsection{Erfassen von nicht linearen Kurven}
+
+\newpage
+	
+\subsection{Erfassen von nicht linearen Kurven}
 	\subsubsection{Messung einer statischen Kennlinie \formelbuch{86}}
 	\begin{minipage}{10cm}
-		\includegraphics[width=7cm]{./bilder/NichtlinearMitPT1.jpg}   
+		\includegraphics[width=6cm]{./bilder/NichtlinearMitPT1.jpg}   
     \end{minipage}
 	\begin{minipage}{7cm}
-    	\includegraphics[width=5cm]{./bilder/NichtlinearMitPT1_dia.jpg}
+    	\includegraphics[width=4.5cm]{./bilder/NichtlinearMitPT1_dia.jpg}
     \end{minipage}\\
-		Da das Signal x meist nicht zugänglich ist, muss man den ganzen Prozess
-		ausmessen.\\
-		Mit einem Dreieck kann man die Kennlinie auslesen. Sie wird jedoch von einer
-		``unechten" Hysterese verzerrt, die eine Hysteresebreite von 2$\alpha$ T, wobei
-		$\alpha$ die Rampensteilheit ist und T die Zeitkonstante des PT1-Gliedes.
+		\begin{tabular}{p{4cm}  p{14cm}}
+				\textbf{statische Messung:} &
+				schrittweises anlegen eines konstanten Signalwertes (Treppenfunktion)
+				am Eingang. Dabei muss jedes mal der Einschwingvorgang abgewartet werden.\\
+				
+				\textbf{dynamische Messung:} &
+				Am Eingang wird eine Dreieckspannung angelegt. Eine zu hohe Rampensteilheit
+				führt zu einer ``unechten Hysterese`` die als physikalische Eigenschaft gar
+				nicht existiert.\\
+		
+				$h = \alpha \cdot T$ & $h$: Hysteresenbreite\\
+				\parbox{4cm}{falls $h$ von $\alpha$ abhängt ist die Hysterese unecht} & $\alpha$: Rampensteilheit $[1/s]$\\
+				& $T$: Zeitkonstante des PT$_1$\\
+				& 
+			
+		\end{tabular}
+
 
 	\subsubsection{Mathematische Erfassung einer Messkurve \formelbuch{89}}
 	\begin{floatingfigure}[r]{12cm}
@@ -72,17 +90,16 @@
      	Gesucht ist ein Graph, der eine ähnliche Form
 		hat wie die Messkurve. Günstig sind Polynome, da sie mathematisch einfach zum
 		beschreiben sind, aber auch Sinus- oder Arctan- Funktionen	\\ 
-        \\
      	
         \item \textbf{Bestimmung der Parameter:}
           \begin{enumerate}
-           \item Methode der ausgewählten Punkte:\\
+           \item Methode der ausgewählten Punkte (für GL nicht linear in Paramater):\\
           		\begin{enumerate}
                     \item Gleich viele Messpunkte wie frei zu wählende Parameter der
            			Approximationsfunktionen.
            			\item Einsetzen der Koordinaten der Messpunkte in die Gleichungen.
            		\end{enumerate}
-           	\item Methode der kleinsten Fehlerquadrate:
+           	\item Methode der kleinsten Fehlerquadrate (für GL linear in Parameter):
            		\begin{enumerate}
                      \item Mindestens gleich viele Messpunkte wie Parameter der
            		Appxomationsfunktion, können jedoch mehr gewählt werden. z.B. \\
@@ -152,38 +169,49 @@
 			Trigonometrische Funktionen bei Arbeitspunkt $\alpha = 0$: $\qquad \sin \alpha \approx
 			\alpha \qquad \tan \alpha \approx \alpha \qquad \cos \alpha \approx 1$ \\
 			\textbf{Vorgehen} \\
-			\begin{minipage}[c]{6cm}
-				\includegraphics[width=6cm]{bilder/LinArbeitspunkt}
+			\begin{minipage}[c]{5cm}
+				\includegraphics[width=5cm]{bilder/LinArbeitspunkt}
 			\end{minipage}
-			\begin{minipage}[c]{12cm}
+			\begin{minipage}[c]{16cm}
 				\begin{enumerate}
-					\item DGL des Systems bestimmen
-					\item Alle Signale darstellen als $u(t)=u_0+\Delta u,\,v(t)=v_0+\Delta v,\dots$
-					\item Arbeitspunkte $u_0,v_0,\dots$ = stationärer Zustand bestimmen
-					\item Signaländerungen $\Delta u, \Delta v, \dots$ linearisieren
-							(Tangente an Kennline)
-					\item DGL durch Signaländerungen darstellen.
-					\item Blockschaltbild mit Signaländerungen darstellen (siehe links)
+					\item DGL der nichtlinearen Regelstrecke bestimmen
+					\item Alle Signale so formulieren: $x = x_0 + \Delta x,$ z.B. $v=v_0 + \Delta v$ (Arbeitspunkt + Abweichung)
+					\item Beziehung zwischen den Arbeitspunkt-Werten der verschiedenen Signale aufstellen.
+					\item DGL mit $\Delta x$ angeben.
+					\item Vernachlässigen der Termen höherer Ordnung, z.B. $\Delta x^2$
 				\end{enumerate}
+	
 			\end{minipage}
 			
+			\textbf{Beispiel:}\\
+			\begin{tabular}{lll}
+				DGL: & $v=\int(F_s - K\cdot v^2) \cdot \frac{1}{m} dt \Leftrightarrow Kv^2 + m\dot{v} = F_s$ &\\
+				$x = x_0 +\Delta x$: & $v(t) = v_0 + \Delta v$ & $v_0$ vorgegeben \\
+				& $F_s(t) = F_{s0} + \Delta F_s$ & $F_{s0} = K\cdot v_0^2$ \\
+				DGL mit $\Delta x$: & $v(t) = \int\frac{1}{m}(F_s(t) - K \cdot v(t)^2) dt$ & \\
+				& $\Leftrightarrow v_0+\Delta v = \int\frac{1}{m}(F_{s0}+\Delta F_s - K(v_0+\Delta v)^2 dt$ & \\
+				& $\Leftrightarrow v_0+\Delta v = \int\frac{1}{m}(Kv_0^2+\Delta F_s - K(v_0^2+2v_0\Delta v+\Delta v^2) dt$ & \\
+				$\Delta x^2$ vernachlässigen: & $\Leftrightarrow v_0+\Delta v = \int\frac{1}{m}(Kv_0^2+\Delta F_s - K(v_0^2+2v_0\Delta v) dt$ & \\
+				Umformen: & $m\Delta\dot{v}+2Kv_0\Delta v = \Delta F_s \Rightarrow m\Delta\dot{v}+K_0\Delta v = \Delta F_s$ & mit $K_0 = 2Kv_0$ \\
+			
+			\end{tabular}
+
 		\subsubsection{Durch inverse Kennlinie \formelbuch{94}}
 		\begin{minipage}{11cm}
 			\includegraphics[width=10cm]{./bilder/Kennlinienkompensation.jpg}
         \end{minipage}
 		\begin{minipage}{6cm}
-        	\includegraphics[width=6cm]{./bilder/Kennlinienkompensation_dia.jpg}
+        	\includegraphics[width=4cm]{./bilder/Kennlinienkompensation_dia.jpg}
         \end{minipage}\\
 			Durch das Vorschalten der Inversen Kennlinie kann man die Nichtlinearitäten
 			beheben. Das System als ganzes reagiert nun linear, das Innere des System
 			jedoch immer noch nicht, wie man an den Kennlinien gut erkennen kann.
-			
 		\subsubsection{Durch Gegenkopplung \formelbuch{96}}
 				\begin{minipage}{11cm}
-			\includegraphics[width=10cm]{./bilder/Gegenkopplung.jpg}
+			\includegraphics[width=8cm]{./bilder/Gegenkopplung.jpg}
         \end{minipage}
 		\begin{minipage}{9cm}
-        	\includegraphics[width=6cm]{./bilder/Gegenkopplung_dia.jpg}
+        	\includegraphics[width=4cm]{./bilder/Gegenkopplung_dia.jpg}
         \end{minipage}\\
 			Da ein Prozess variierende Koefizienten besizten kann, kann die Kompensation
 			nicht immer mit der inversen Kennlinie geschehen. Deshalb ist es oft
