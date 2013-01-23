@@ -9,7 +9,7 @@
     	\hline
     	\textbf{P-Glied} \formelbuch{35} & $y(t)=K u(t)$	& K & K
     	&\begin{minipage}{2.4cm}
-         \includegraphics[width=2.4cm]{./bilder/verlaufP.jpg}
+         \includegraphics[width=2.4cm,trim=0 0 -5 -5]{./bilder/verlaufP.jpg}
          \end{minipage}
     	&\begin{minipage}{2.4cm}
          \includegraphics[width=2.4cm]{./bilder/p-Glied.jpg}
@@ -21,7 +21,7 @@
     				&$\dfrac{K}{s}$
     	&Kt
     	&\begin{minipage}{2.4cm}
-         \includegraphics[width=2.4cm]{./bilder/verlaufI.jpg}
+         \includegraphics[width=2.4cm,trim=0 0 -5 -5]{./bilder/verlaufI.jpg}
          \end{minipage}
     	&\begin{minipage}{2.4cm}
          \includegraphics[width=2.4cm]{./bilder/I-Glied.jpg}
@@ -31,7 +31,7 @@
     	\textbf{Totzeit-Glied} \formelbuch{41}	
     	&$y(t)=u(t-T_t)$	&$e^{-T_t s}$	&$K \cdot u(t-T_t)$
     	&\begin{minipage}{2.4cm}
-         \includegraphics[width=2.4cm]{./bilder/verlaufTt.jpg}\\
+         \includegraphics[width=2.4cm,trim=0 0 -5 -5]{./bilder/verlaufTt.jpg}\\
          \end{minipage}
     	&\begin{minipage}{2.4cm}
          \includegraphics[width=2.4cm]{./bilder/Tt-Glied.jpg}
@@ -54,8 +54,8 @@
          \includegraphics[width=2.3cm]{./bilder/Pt1-Glied.jpg}
          \end{minipage}\\
     	\hline
-    \end{tabular}
-    
+    \end{tabular} 
+ 
     \begin{multicols}{3}
     \textbf{P-Glied (nicht inv. Op-Amp)} \\
     \includegraphics[height=2.5cm]{./bilder/OP-Amp.png} \\
@@ -73,6 +73,8 @@
     
     \end{multicols}
     
+    
+    \begin{minipage}{11cm}
     \subsection{Stationäre Signale}
 	Für den stationären Fall gelten folgende Bedingungen:
 	\begin{itemize}
@@ -82,9 +84,14 @@
     	\item \textbf{Totzeitglieder} werden kurzgeschlossen.
     	\item \textbf{PT$_1$-Glieder} wirken als \textbf{P-Glieder} mit $K_P = K_{PT_1}$ behandelt.
   	\end{itemize}
+  	\end{minipage}
+  	\begin{minipage}{7cm}
+  		\textbf{Alternative Darstellung des PT$_1$-Glied}\\
+  		\includegraphics[width=6cm]{./bilder/PT1_2.png}
+  	\end{minipage} \\
+
 
 	\subsection{Zwei- und Dreipunktregler}
-	
 	\subsubsection{Zweipunktregler \formelbuch{46}}
 		\begin{minipage}{3cm}
  		\includegraphics[height=3cm]{./bilder/Zweipunktregler.jpg}
@@ -93,12 +100,12 @@
         Ein Zweipunktregler ist ein unstetig arbeitender Regler mit zwei
         Ausgangszuständen. Je nachdem, ob der Istwert über oder unter dem
         Sollwert liegt, wird der erste oder der zweite Ausgangszustand
-        eingenommen.   
+        eingenommen. 
         \end{minipage}
         
 		\newpage
-		\textbf{Beispiele von Zweipunktereglerschaltungen:}\\
-		Zweipunktregler mit symmetrischer Kennlinie \formelbuch{52} \\
+		\textbf{Beispiele von Zweipunkte-Reglerschaltungen:}\\ \\
+		\textbf{Zweipunktregler mit symmetrischer Kennlinie \formelbuch{52}} \\
 		\begin{minipage}{9cm}
 			\vspace{.5cm}        
 	 		\includegraphics[width=9cm]{./bilder/Zweipunktregler-b+b2.jpg}\\
@@ -113,7 +120,7 @@
         \end{minipage}\\
 
 	\vspace{.5cm}
-		Zweipunktregler an ausgleichender Strecke \formelbuch{53} \\
+		\textbf{Zweipunktregler an ausgleichender Strecke \formelbuch{53}} \\
 		\begin{minipage}{9cm}
  		\includegraphics[width=9cm]{./bilder/ZweipunktreglerTotglied2.jpg}\\
 			Die Anstiegszeit beträgt nach dem Einschwingvorgang:
@@ -143,6 +150,6 @@
 		\includegraphics[width=9cm]{./bilder/Dreipunktregler.jpg}
         \end{minipage}
 		\begin{minipage}{7.5cm}
-        \includegraphics[width=7.5cm]{./bilder/Dreipunktregler_dia.jpg}
+        \includegraphics[width=7.5cm]{./bilder/Dreipunktregler_dia.png}
         \end{minipage}\\
-		Damit d = 0 wird muss c=$T_u K_I$ sein.
+		Damit d = 0 wird muss c=$T_u K_I$ sein. Falls ein PT$_1$-Glied vorkommt muss $c=K_I K_s b(T_u + T_G)$ sein.
