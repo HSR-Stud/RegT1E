@@ -2,4 +2,5 @@
 *.pdf
 *.DS_STORE
 *.log
-*.synctex.*
+*.synctex*
+/tmp
