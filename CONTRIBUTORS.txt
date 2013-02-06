@@ -1,7 +1,3 @@
-Hannes Badertscher (hbaderts)
-Sven Körner (skoerner)
-Christian Gwerder (cgwerder)
-Jürg Rast (jrast)
 Fabian Braun
 Lukas Schmid
 Ueli Giger
@@ -9,3 +5,10 @@ Roman Koller
 Sven Arnold
 Silvano Ferretti
 Elias Ammann
+Jürg Rast (jrast)
+Damian Köppel (dkoeppel)
+Raphael Nester (rnestler)
+Hannes Badertscher (hbaderts)
+Sven Körner (skoerner)
+Christian Gwerder (cgwerder)
+Fabian Niedermann (fniederm)
