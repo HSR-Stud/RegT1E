@@ -2,9 +2,11 @@
 % Dokumentinformationen %
 %%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\titleinfo}{Regelungstechnik 1 - Zusammenfassung}
-\newcommand{\authorinfo}{Braun \& Co, J\"urg \& Co, Badertscher, K\"orner, Gwerder, Ehrler, Leuenberger}
-\newcommand{\versioninfo}{$Rev: 1.0 $ | 
-						gem\"ass Unterricht Markus Kottmann/HS2014}
+\newcommand{\authorinfo}{Dev4Future, sowie weitere Autoren}
+\newcommand{\versioninfo}{HS / 2019}
+
+% alle Autoren %%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Dev4Future, Braun \& Co, J\"urg \& Co, Badertscher, K\"orner, Gwerder, Ehrler, Leuenberger
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Standard projektübergreifender Header für
@@ -30,18 +32,16 @@
 
 
 \begin{document}
+	\input{sections/TechRegelkreis}	
+	\input{sections/Regelungen}
+	\input{sections/ModellierungVonRegelstrecken}
+	\input{sections/SchaltendeRegler}
+	\input{sections/StetigaehnlicheRegler}
+	\input{sections/Linearisierung}
 
-\input{sections/TechRegelkreis}	
-\input{sections/Regelungen}
-\input{sections/ModellierungVonRegelstrecken}
-\input{sections/SchaltendeRegler}
-\input{sections/StetigaehnlicheRegler}
-\input{sections/Linearisierung}
 \newpage
-\section{Idiotenseite}
-\input{idiotenseite/trigo/trigoInclude}
-
-
+	\section{Idiotenseite}
+		\input{idiotenseite/trigo/trigoInclude}
 \end{document}
 
 
