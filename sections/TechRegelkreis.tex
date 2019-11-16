@@ -1,7 +1,6 @@
 \section{Grundsätzliches zum Regelkreis}
-\subsection{Definitionen \formelbuch{14}}
+\subsection{Definitionen \skript{9-24}}
 
-%TODO Festwert und Folgeregelung -> Erklärung Skript S. 14
 
 \begin{description}[leftmargin=2.5cm]
  \item[System]	Eine Anordnung von Gebilden, welches von der Umwelt abgegrenzt ist, aber
@@ -31,6 +30,7 @@
  				 - kann auf veränderte Störgrössen reagieren \newline
  				 - kann bei \textbf{stabiler} Strecke \textbf{instabil} werden. \newline
 				 - closed loop
+				 - gutes Führungsverhalten: Normalerweise will man, dass die Regelgrösse der Führungsgrösse entspricht.
 \end{minipage}
 \begin{minipage}{8cm}
 \includegraphics[width=8cm]{./bilder/Grundregelkreis_klein.jpg}
@@ -102,26 +102,26 @@
         	\hline
         	
         	statisch &
-        	\textcolor{red}{\underline{dynamisch}} &
+        	\textcolor{blue}{\underline{dynamisch}} &
         	&
         	Beschreiben nur den Gleichgewichtszustand (Vorgeschichte nicht
         	berücksichtigt)\\
         	\hline
         	
-        	\textcolor{red}{\underline{linear}}	&
+        	\textcolor{blue}{\underline{linear}}	&
         	nichtlinear &
         	Ausnahmen: 2-, 3-Pt.Regler Simulation &
         	Assoziativ und Kommutativgesetz berücksichtigt \newline (x=X, 2x=2X;
         	y=Y, x+y=X+Y)\\
         	\hline
         	
-        	\textcolor{red}{\underline{zeitinvariant}} &
+        	\textcolor{blue}{\underline{zeitinvariant}} &
         	zeitvariant &
         	&
         	unabhängig von zeitlicher Verschiebung \\
         	\hline
         	
-        	\textcolor{red}{\underline{Zeitkontinuierlich}} &
+        	\textcolor{blue}{\underline{Zeitkontinuierlich}} &
         	zeitdiskret &
         	&
         	Signal hat zu jedem Zeitpunkt einen Wert\\
@@ -131,35 +131,35 @@
         	\\
         	\hline
         	
-        	\textcolor{red}{\underline{wertkontinuierlich}}&
+        	\textcolor{blue}{\underline{wertkontinuierlich}}&
         	wertdiskret&
         	&
         	Signal kann alle Werte eines Intervalles annehmen\\
         	\hline
         	
-        	\textcolor{red}{\underline{kausal}}	&
+        	\textcolor{blue}{\underline{kausal}}	&
         	akausal	&
         	&
         	Die Ausgangsgrösse hängt nicht von zukünftigen Ereignissen ab\\
         	\hline
         	
-        	\textcolor{red}{\underline{konzentrierte}} &
+        	\textcolor{blue}{\underline{konzentrierte}} &
         	verteilte &
         	zB.	Stromleitung: &
         	\\
-        	\textcolor{red}{\underline{Parameter}} &
+        	\textcolor{blue}{\underline{Parameter}} &
         	Parameter	&
         	ein R und ein C/ sehr viele RC-Glieder in Serie &
         	\\
         	\hline
         	
-        	\textcolor{red}{\underline{deterministisch}}	&
+        	\textcolor{blue}{\underline{deterministisch}}	&
         	stochastisch &
         	vorhersehbar/zufällig &
         	Das Zeitverhalten lässt sich aufgrund seiner Gleichungen
         	``reproduzieren"\\
         	\hline
-        \end{tabular}\\
-				\textcolor{red}{\underline{wird für Regler vorausgesetzt!}}
+        \end{tabular}\\[1mm]
+   				\textcolor{blue}{\underline{wird für Regler vorausgesetzt!}}
 			
        % \end{sidewaystable}
