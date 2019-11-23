@@ -4,37 +4,39 @@
 
 \begin{description}[leftmargin=2.5cm]
  \item[System]	Eine Anordnung von Gebilden, welches von der Umwelt abgegrenzt ist, aber
-								mit ihr über Inputs/Outputs in einer Beziehung stehen.
+								mit ihr über Inputs/Outputs in einer Beziehung stehen.\quad{\color{red} Skript S.19}
  \item[Prozess] Die Gesamtheit der zusammenwirkenden Vorgänge in einem System,
         		durch die Materie, Energie, Informationen umgeformt, transportiert und
-        		gespeichert wird. \\
+        		gespeichert wird.\quad{\color{red} Skript S.19} \\
         		\begin{tabular}{lp{12cm}}
         		\textbf{ohne Ausgleich:} & Die Ausgangsgrösse ist für $t \rightarrow \infty$ nicht begrenzt \\
         		\textbf{mit Ausgleich:} & Die Ausgangsgrösse ist für $t \rightarrow \infty$ begrenzt. Ein Prozess wo sich selber ausgleicht wird oft mit einem $PT_1$-Glied modelliert.
         		\end{tabular}
  \item[Modell]	Ein Modell ist eine Abbildung eines Systems in ein anderes begriffliches oder
 								gegenständliches System, dass den Prozess bezüglich ausgewählter Fragestellung
-								hinreichend genau beschreibt.
- \item[SISO] Single Input - Single Output
- \item[MIMO] Multi Input - Multi Output
+								hinreichend genau beschreibt.\quad{\color{red} Skript S.19}
+ \item[SISO] Single Input - Single Output\quad{\color{red} Skript S.23}
+ \item[MIMO] Multi Input - Multi Output\quad{\color{red} Skript S.23}
  \item[Steuerung]	Bei einer Steuerung wird der Energiestrom über mindestens einen Verstärker (Stelleinrichtung)
 									beeinflusst, so dass die Prozessaufgabe erfüllt wird, wobei die Steuerinformation
-									von Glied zu Glied läuft (Steuerkette) \newline
-									-ohne Rückkopplung \newline
-									- kann bei \textbf{stabiler} Strecke \textbf{nicht instabil} werden \newline
+									von Glied zu Glied läuft (Steuerkette) {\color{red} Skript S.18} \newline
+									- ohne Rückkopplung \newline
+									- kann bei \underline{stabiler} Strecke \underline{nicht instabil} werden \newline
 									- open loop\\
-\begin{minipage}{8cm}
- \item[Regelung] mit Rückkopplung (wirkt als Gegenkopplung) \newline
- 				 - immer ein Vergleichsglied zwischen Führungsgrösse (Sollwert) und
- 				 Regelgrösse (Istwert) \newline
- 				 - kann auf veränderte Störgrössen reagieren \newline
- 				 - kann bei \textbf{stabiler} Strecke \textbf{instabil} werden. \newline
-				 - closed loop
-				 - gutes Führungsverhalten: Normalerweise will man, dass die Regelgrösse der Führungsgrösse entspricht.
-\end{minipage}
-\begin{minipage}{8cm}
-\includegraphics[width=8cm]{./bilder/Grundregelkreis_klein.jpg}
-\end{minipage}				
+	\begin{minipage}{8cm}
+		 \item[Regelung] mit Rückkopplung (wirkt als Gegenkopplung) \\{\color{red} Skript S.18} \newline
+		 				 - immer ein Vergleichsglied zwischen Führungsgrösse (Sollwert) und
+		 				   Regelgrösse (Istwert) \newline
+		 				 - kann auf veränderte Störgrössen reagieren \newline
+		 				 - kann bei \underline{stabiler} Strecke \underline{instabil} werden. \newline
+						 - closed loop
+						 - gutes Führungsverhalten: Normalerweise will man, dass die Regelgrösse der Führungsgrösse entspricht. \newline
+						 \textbf{Festwertregelung} r(t) ist konstant {\color{red} Skript S.14} \newline
+						 \textbf{Folgeregelung} r(t) variiert mit der Zeit {\color{red} Skript S.14}\newline
+	\end{minipage}
+	\begin{minipage}{9cm}
+		\includegraphics[width=\textwidth]{./bilder/Grundregelkreis_klein.jpg}
+	\end{minipage}				
 				
 \end{description}
 
