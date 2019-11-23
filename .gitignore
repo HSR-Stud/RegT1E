@@ -7,3 +7,5 @@
 *.synctex*
 /tmp
 *.DS_STORE
+
+/header.tex
