@@ -34,10 +34,21 @@
 		Eine Funktion $f$ ist linear in den Parametern, wenn sie durch eine Linearkombination der Parameter geschrieben werden kann. Die Funktionen in $t$ müssen dabei nicht linear sein: \\
 		$f(t) = \sum\limits_{j=1}^m a_j \cdot f_j(t)$ \\
 		Beispiel: $y = \left[\begin{matrix} t^2 & sin(t) \end{matrix} \right] \cdot \left[\begin{matrix} a_1 \\ a_2 \end{matrix}\right]$ ist linear in den Parametern $a$
+		
+	\subsubsection{Least Square}
+		Überbestimmte Gleichungssysteme (m $>$ n) haben im Allgemeinen keine Lösung.\\
+		 $\rightarrow$ Suche Lösung $\vec{x},$ die am wenigsten	falsch ist $\Rightarrow \quad|A \vec{x}-\vec{b}|$ möglichst klein \\
+		\begin{minipage}{4.5cm}
+			\includegraphics[width=\textwidth]{./bilder/LeastSquare.png}
+		\end{minipage} \qquad\qquad
+		\begin{minipage}{0.5\textwidth}
+			$\boxed{A^{t} A \vec{x}=A^{t} \vec{b} \quad \Rightarrow \quad \vec{x}=\left(A^{t} A\right)^{-1} A^{t} \vec{b}}$
+		\end{minipage}
 	
 	\subsection{Einfluss der Lage einer Nichtlinearität}
 		\begin{enumerate}
-			\item	nicht lineare Blöcke dürfen \underline{nicht} vertauscht werden!\\			\item vertauschen von linearen Blöcken erlaubt falls ...\\
+			\item	nicht lineare Blöcke dürfen \underline{nicht} vertauscht werden!\\			
+			\item vertauschen von linearen Blöcken erlaubt falls ...\\
 								... Anfangsbedingung = 0\\
 								... interne Signale keine Rolle spielen
 		\end{enumerate}
@@ -50,6 +61,7 @@
 	\begin{minipage}[c]{8cm}
 		\includegraphics[width=8cm]{./bilder/Liste_Nichtlinearitaeten.jpg}
 	\end{minipage}
+	
 
 \newpage
 	
@@ -217,3 +229,6 @@
 			günstiger die Nichtliniearitäten mit einer Gegenkopplung zu kompensieren.
 			Diese ist umso wirksamer je grösser die Verstärkung $K_p$ ist.
 			Es können jedoch Stabilitätsprobleme auftreten.
+			
+
+			
