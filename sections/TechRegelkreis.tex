@@ -92,76 +92,102 @@
 	\end{tabular}\\
 
 		
-		%\begin{sidewaystable}
-		\subsection{Klassifizierung technischer Systeme}
-		\begin{tabular}{|l|l|p{6cm}|p{6cm}|}
-        	\hline
-        	
-        	einfach &
-        	schwierig &
-        	Bemerkung &
-        	Bedeutung des \textbf{ersten} Begriffs\\
-        	\hline
-        	
-        	statisch &
-        	\textcolor{blue}{\underline{dynamisch}} &
-        	&
-        	Beschreiben nur den Gleichgewichtszustand (Vorgeschichte nicht
-        	berücksichtigt)\\
-        	\hline
-        	
-        	\textcolor{blue}{\underline{linear}}	&
-        	nichtlinear &
-        	Ausnahmen: 2-, 3-Pt.Regler Simulation &
-        	Assoziativ und Kommutativgesetz berücksichtigt \newline (x=X, 2x=2X;
-        	y=Y, x+y=X+Y)\\
-        	\hline
-        	
-        	\textcolor{blue}{\underline{zeitinvariant}} &
-        	zeitvariant &
-        	&
-        	unabhängig von zeitlicher Verschiebung \\
-        	\hline
-        	
-        	\textcolor{blue}{\underline{Zeitkontinuierlich}} &
-        	zeitdiskret &
-        	&
-        	Signal hat zu jedem Zeitpunkt einen Wert\\
-        	$\dot{y}=\frac{ku-y}{T}$ &
-        	$y_{k+1}=a y_k + b u_k$	&
-        	&
-        	\\
-        	\hline
-        	
-        	\textcolor{blue}{\underline{wertkontinuierlich}}&
-        	wertdiskret&
-        	&
-        	Signal kann alle Werte eines Intervalles annehmen\\
-        	\hline
-        	
-        	\textcolor{blue}{\underline{kausal}}	&
-        	akausal	&
-        	&
-        	Die Ausgangsgrösse hängt nicht von zukünftigen Ereignissen ab\\
-        	\hline
-        	
-        	\textcolor{blue}{\underline{konzentrierte}} &
-        	verteilte &
-        	zB.	Stromleitung: &
-        	\\
-        	\textcolor{blue}{\underline{Parameter}} &
-        	Parameter	&
-        	ein R und ein C/ sehr viele RC-Glieder in Serie &
-        	\\
-        	\hline
-        	
-        	\textcolor{blue}{\underline{deterministisch}}	&
-        	stochastisch &
-        	vorhersehbar/zufällig &
-        	Das Zeitverhalten lässt sich aufgrund seiner Gleichungen
-        	``reproduzieren"\\
-        	\hline
-        \end{tabular}\\[1mm]
+	%\begin{sidewaystable}
+	\subsection{Klassifizierung technischer Systeme}
+		
+		\begin{tabular}{|l|p{6.3cm}||l|p{6.3cm}|}
+			
+	        \hline
+	        	
+	        	einfach & 
+	        	Bedeutung des \textbf{ersten} Begriffs & 
+	        	schwierig & 	
+	        	Bedeutung des \textbf{zweiten} Begriffs\\
+	        \hline
+	        	
+	        	statisch &
+	        	System ohne Gedächtnis.
+	        	Wert am Ausgang hängt nur von gegenwärtigen
+	        	Werten am Eingang ab.&
+	        	\textcolor{blue}{\underline{dynamisch}} &
+	        	System mit Gedächtnis.
+	        	Wert am Ausgang hängt von gegenwärtigen
+	        	und/oder vergangenen und/oder zukünftigen
+	        	Werten am Eingang ab.\\
+	        \hline
+	        	
+	        	\textcolor{blue}{\underline{linear}}	&
+	        	Linearkombination am Eingang ruft
+	        	entsprechende Linearkombination am
+	        	Ausgang hervor.
+	        	Nur Eingang x(t) muss linear sein,
+	        	variable Faktoren f(t) nicht (z.B. sin(t))! &
+	        	nichtlinear &
+	        	Systeme die neue Frequenzanteile erzeugen.\\ %TODO Was ist damit gemeint: Ausnahmen: 2-, 3-Pt.Regler Simulation
+	       	\hline
+	        	
+	        	\textcolor{blue}{\underline{zeitinvariant}} &
+	        	Zeitliche Verschiebung des Eingangs ruft
+	        	identische zeitliche Verschiebung am
+	        	Ausgangs hervor. &
+	        	zeitvariant	&
+	        	Zeitinvarianz ist nicht erfüllt. \\
+	        \hline
+	        	
+	        	\textcolor{blue}{\underline{Zeitkontinuierlich}} &
+	        	Signal hat zu jedem Zeitpunkt einen Wert&
+	        	zeitdiskret&
+	        	\\
+	        	$\dot{y}=\frac{ku-y}{T}$ &
+	        	&
+	        	$y_{k+1}=a y_k + b u_k$&
+	        	\\
+	        \hline
+	        	
+	        	\textcolor{blue}{\underline{wertkontinuierlich}}&
+	        	Signal kann alle Werte eines Intervalles annehmen&
+	        	wertdiskret&
+	        	\\
+	       	\hline
+	        	
+	        	\textcolor{blue}{\underline{kausal}}	&
+	        	Wert am Ausgang hängt von gegenwärtigen 
+	        	und/oder vergangenen Werten am Eingang ab.	&
+	        	akausal&
+	        	Wert am Ausgang hängt von zukünftigen
+	        	und/oder gegenwärtigen und/oder vergangenen
+	        	Werten am Eingang ab.\\
+	       	\hline
+	       
+%TODO: Was ist damit gemeint 	
+%	        	\textcolor{blue}{\underline{konzentrierte}} &
+%	        	verteilte &
+%	        	zB.	Stromleitung: &
+%	        	\\
+%	        	\textcolor{blue}{\underline{Parameter}} &
+%	        	Parameter	&
+%	        	ein R und ein C/ sehr viele RC-Glieder in Serie &
+%	        	\\
+%	        \hline
+	        	
+	        	\textcolor{blue}{\underline{deterministisch}}	&
+	        	 Das Zeitverhalten lässt sich aufgrund seiner Gleichungen
+	        	 ``reproduzieren"&
+	        	stochastisch &		%vorhersehbar/zufällig
+	        	\\
+	        \hline
+	        \hline
+	        	reell&
+	        	Reelles Eingangssignal bewirkt
+	        	reelles Ausgangssignal.&
+	        	
+	        	invertierbar&
+	        	Bei jedem Ausgangssignal kann eindeutig
+	        	auf das entsprechende Eingangssignal
+	        	geschlossen werden.\\
+	        \hline
+	        
+	       \end{tabular}\\[1mm]
    				\textcolor{blue}{\underline{wird für Regler vorausgesetzt!}}
 			
        % \end{sidewaystable}
