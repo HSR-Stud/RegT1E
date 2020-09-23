@@ -2,9 +2,11 @@
 % Dokumentinformationen %
 %%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\titleinfo}{Regelungstechnik 1 - Zusammenfassung}
-\newcommand{\authorinfo}{Braun \& Co, J\"urg \& Co, Badertscher, K\"orner, Gwerder, Ehrler, Leuenberger}
-\newcommand{\versioninfo}{$Rev: 1.0 $ | 
-						gem\"ass Unterricht Markus Kottmann/HS2014}
+\newcommand{\authorinfo}{Dev4Future und weitere Studenten der HSR}
+\newcommand{\versioninfo}{HS / 2019}
+
+% alle Autoren %%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Dev4Future, Braun \& Co, J\"urg \& Co, Badertscher, K\"orner, Gwerder, Ehrler, Leuenberger
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Standard projektübergreifender Header für
@@ -15,33 +17,31 @@
 % DORT NUR ERGÄNZEN, NICHTS LÖSCHEN
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \include{header/header}
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Neue Befehle und Definitionen                
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage{enumitem,tikz}
-\usepackage{rotating}
+\include{header2/header2}
 
 
 
-\setlist[1]{labelindent=\parindent} % < Usually a good idea
-\setlist{style=multiline,topsep=0pt,rightmargin=2cm}
-\setlist[enumerate]{leftmargin=0.5cm}
-
-
-
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% Dokument %
+%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
+	\input{sections/TechRegelkreis}	
+	\input{sections/Grundglieder}
+	%\input{sections/Regelungen}
+	\input{sections/ModellierungVonRegelstrecken}
+	\input{sections/SchaltendeRegler}
+	\input{sections/StetigaehnlicheRegler}
+	\input{sections/LeastSquare}
+	\input{sections/Linearisierung}
 
-\input{sections/TechRegelkreis}	
-\input{sections/Regelungen}
-\input{sections/ModellierungVonRegelstrecken}
-\input{sections/SchaltendeRegler}
-\input{sections/StetigaehnlicheRegler}
-\input{sections/Linearisierung}
 \newpage
-\section{Idiotenseite}
-\input{idiotenseite/trigo/trigoInclude}
-
-
+	\section{Idiotenseite}
+		\input{idiotenseite/trigo/trigoInclude}
 \end{document}
 
 
