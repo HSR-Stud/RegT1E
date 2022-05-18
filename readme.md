@@ -10,9 +10,6 @@ Und zwar im Ordner (Submodul), header.tex
 wird umgeändert zu:                                                                                             
 **\usepackage[left=0.5cm,right=0.5cm,top=0.5cm,bottom=0.5cm,includeheadfoot]{geometry}**
 
-# !Achtung!
-Sobald dies in HSR-Stud zurück geforkt wird, muss im .gitignore das header.tex wieder gelöscht werden!!
-
 ## Ausdruck
 * Zusammenfassung am Besten als A5-Booklet ausdrucken
 
